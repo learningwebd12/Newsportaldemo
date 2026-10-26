@@ -1,0 +1,3881 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>नेपाल खबर | सत्य, तथ्य र निष्पक्ष समाचार</title>
+  <meta name="description" content="नेपाल खबर - नेपालको अग्रणी अनलाइन समाचार पोर्टल। ताजा, सत्य र निष्पक्ष राष्ट्रिय तथा अन्तर्राष्ट्रिय समाचारहरू।">
+  <meta property="og:title" content="नेपाल खबर | सत्य, तथ्य र निष्पक्ष समाचार">
+  <meta property="og:description" content="सत्य, तथ्य र निष्पक्ष समाचार - नेपालको लोकप्रिय डिजिटल समाचार पोर्टल।">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Google Fonts: Mukta for headings and Noto Sans Devanagari for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* CSS Variables & Reset */
+    :root {
+      --primary-red: #C8102E;
+      --primary-red-hover: #a50b24;
+      --primary-red-light: #fff1f2;
+      --primary-blue: #003893;
+      --primary-blue-hover: #002b70;
+      --primary-blue-light: #f0f6ff;
+      --accent-gold: #d97706;
+      
+      --bg-main: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-subtle: #f1f5f9;
+      --border-color: #e2e8f0;
+      --border-dark: #cbd5e1;
+      
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --text-light: #94a3b8;
+      
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+      --font-body: 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-heading: 'Mukta', 'Noto Sans Devanagari', sans-serif;
+      --transition-speed: 0.25s;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+    }
+
+    /* Dark Mode Theme */
+    body.dark-mode {
+      --bg-main: #0b0f19;
+      --bg-surface: #141b2d;
+      --bg-subtle: #1c263d;
+      --border-color: #27354f;
+      --border-dark: #374668;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-light: #64748b;
+      --primary-red-light: rgba(200, 16, 46, 0.2);
+      --primary-blue-light: rgba(0, 56, 147, 0.2);
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.7);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--text-main);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color var(--transition-speed);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      background: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      background-color: var(--bg-surface);
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      position: relative;
+      z-index: 40;
+    }
+
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .date-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 500;
+      flex-wrap: wrap;
+    }
+
+    .date-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background-color: var(--bg-subtle);
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-sm);
+      color: var(--text-main);
+      font-size: 0.8125rem;
+      border: 1px solid var(--border-color);
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .theme-toggle-btn, .search-trigger-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background-color: var(--bg-subtle);
+      color: var(--text-main);
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      border: 1px solid var(--border-color);
+      transition: all var(--transition-speed) ease;
+    }
+
+    .theme-toggle-btn:hover, .search-trigger-btn:hover {
+      background-color: var(--primary-blue-light);
+      border-color: var(--primary-blue);
+      color: var(--primary-blue);
+    }
+
+    body.dark-mode .theme-toggle-btn:hover, body.dark-mode .search-trigger-btn:hover {
+      color: #60a5fa;
+    }
+
+    /* Live Search Dropdown / Bar */
+    .search-panel {
+      display: none;
+      background-color: var(--bg-surface);
+      border-bottom: 2px solid var(--primary-red);
+      padding: 1.25rem 0;
+      box-shadow: var(--shadow-lg);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      animation: slideDown 0.25s ease-out;
+    }
+
+    .search-panel.active {
+      display: block;
+    }
+
+    .search-panel-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .search-input-wrap {
+      display: flex;
+      align-items: center;
+      position: relative;
+      background-color: var(--bg-subtle);
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: border-color var(--transition-speed);
+    }
+
+    .search-input-wrap:focus-within {
+      border-color: var(--primary-blue);
+    }
+
+    .search-input-wrap svg {
+      margin-left: 1rem;
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      font-family: inherit;
+      color: var(--text-main);
+    }
+
+    .search-close-btn {
+      padding: 0.5rem 1rem;
+      color: var(--text-muted);
+      font-weight: bold;
+      transition: color var(--transition-speed);
+    }
+
+    .search-close-btn:hover {
+      color: var(--primary-red);
+    }
+
+    .search-results-box {
+      max-height: 400px;
+      overflow-y: auto;
+      background-color: var(--bg-surface);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      padding: 0.75rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .search-result-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.6rem 0.75rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: background-color var(--transition-speed);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .search-result-item:last-child {
+      border-bottom: none;
+    }
+
+    .search-result-item:hover {
+      background-color: var(--bg-subtle);
+    }
+
+    .search-result-thumb {
+      width: 60px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .search-result-title {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.3;
+    }
+
+    /* Main Header */
+    .site-header {
+      background-color: var(--bg-surface);
+      border-bottom: 2px solid var(--primary-red);
+      position: sticky;
+      top: 0;
+      z-index: 45;
+      box-shadow: var(--shadow-sm);
+      transition: background-color var(--transition-speed);
+    }
+
+    .header-main-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .flag-emblem {
+      width: 48px;
+      height: 52px;
+      position: relative;
+      flex-shrink: 0;
+      filter: drop-shadow(0 2px 4px rgba(200, 16, 46, 0.25));
+    }
+
+    .logo-text-group h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, var(--primary-red) 30%, var(--primary-blue) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+      line-height: 1.1;
+    }
+
+    body.dark-mode .logo-text-group h1 {
+      background: linear-gradient(135deg, #ff4d6d 30%, #60a5fa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .logo-tagline {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      letter-spacing: 0.2px;
+    }
+
+    .header-right-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .epaper-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.85rem;
+      background: linear-gradient(135deg, var(--primary-blue), #1e40af);
+      color: #ffffff;
+      border-radius: var(--radius-sm);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0, 56, 147, 0.25);
+    }
+
+    .hamburger-btn {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 0.5rem;
+      cursor: pointer;
+      border-radius: var(--radius-sm);
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-color);
+    }
+
+    .hamburger-line {
+      width: 24px;
+      height: 2.5px;
+      background-color: var(--text-main);
+      border-radius: 2px;
+      transition: transform var(--transition-speed), opacity var(--transition-speed);
+    }
+
+    /* Main Navigation */
+    .main-nav {
+      position: relative;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding: 0.35rem 0;
+    }
+
+    .nav-list::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-item {
+      flex-shrink: 0;
+    }
+
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 0.95rem;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.0625rem;
+      color: var(--text-main);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      position: relative;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-red);
+      background-color: var(--primary-red-light);
+    }
+
+    .nav-link.active {
+      color: #ffffff !important;
+      background: linear-gradient(135deg, var(--primary-red), #9e001a);
+      box-shadow: 0 2px 5px rgba(200, 16, 46, 0.3);
+    }
+
+    body.dark-mode .nav-link.active {
+      background: linear-gradient(135deg, #e11d48, #be123c);
+      color: #ffffff !important;
+    }
+
+    /* Breaking News Ticker */
+    .breaking-ticker-wrap {
+      background-color: var(--bg-surface);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: stretch;
+      overflow: hidden;
+      height: 44px;
+      box-shadow: inset 0 -1px 2px rgba(0, 0, 0, 0.02);
+    }
+
+    .ticker-label {
+      background: linear-gradient(135deg, var(--primary-red), #b91c1c);
+      color: #ffffff;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.9375rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0 1.25rem;
+      flex-shrink: 0;
+      z-index: 5;
+      letter-spacing: 0.3px;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      animation: pulse 1.4s infinite ease-in-out;
+    }
+
+    .ticker-content-track {
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      mask-image: linear-gradient(to right, transparent, black 2%, black 98%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 2%, black 98%, transparent);
+    }
+
+    .ticker-marquee {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      animation: marquee 32s linear infinite;
+    }
+
+    .ticker-marquee:hover {
+      animation-play-state: paused;
+    }
+
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0 2rem;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: color var(--transition-speed);
+    }
+
+    .ticker-item:hover {
+      color: var(--primary-red);
+      text-decoration: underline;
+    }
+
+    .ticker-bullet {
+      color: var(--primary-red);
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+    /* Section Headers */
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .section-head::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 70px;
+      height: 2px;
+      background-color: var(--primary-red);
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-title-icon {
+      color: var(--primary-red);
+    }
+
+    .section-more-link {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--primary-blue);
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .section-more-link:hover {
+      color: var(--primary-red);
+    }
+
+    /* Badges & Tags */
+    .cat-badge {
+      display: inline-block;
+      padding: 0.2rem 0.55rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      width: fit-content;
+      color: #ffffff;
+      background-color: var(--primary-blue);
+    }
+
+    .cat-badge.politics { background-color: var(--primary-red); }
+    .cat-badge.economy { background-color: #047857; }
+    .cat-badge.sports { background-color: #b45309; }
+    .cat-badge.entertainment { background-color: #7c3aed; }
+    .cat-badge.society { background-color: #0369a1; }
+    .cat-badge.tech { background-color: #0d9488; }
+    .cat-badge.world { background-color: #4b5563; }
+    .cat-badge.opinion { background-color: #be185d; }
+
+    .time-badge {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    /* News Cards Common */
+    .news-card {
+      background-color: var(--bg-surface);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .news-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--border-dark);
+    }
+
+    .card-img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      background-color: var(--bg-subtle);
+    }
+
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .news-card:hover .card-img-wrap img {
+      transform: scale(1.05);
+    }
+
+    .card-body {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      gap: 0.5rem;
+    }
+
+    .card-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text-main);
+      transition: color var(--transition-speed);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .news-card:hover .card-title {
+      color: var(--primary-red);
+    }
+
+    .card-desc {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      flex-grow: 1;
+    }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    /* 4. Hero Section */
+    .hero-section {
+      padding: 2rem 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.9fr 1fr;
+      gap: 1.5rem;
+    }
+
+    /* Featured Slider */
+    .hero-slider-wrap {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background-color: var(--bg-surface);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-color);
+      min-height: 430px;
+    }
+
+    .slider-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+      cursor: pointer;
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 2;
+    }
+
+    .slide-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1);
+      transition: transform 6s ease;
+    }
+
+    .slide.active .slide-img {
+      transform: scale(1.04);
+    }
+
+    .slide-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(11, 15, 25, 0.95) 0%, rgba(11, 15, 25, 0.5) 45%, rgba(0, 0, 0, 0.1) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2.25rem 2rem;
+      color: #ffffff;
+    }
+
+    .slide-title {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.25;
+      margin: 0.6rem 0;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+      transition: color var(--transition-speed);
+    }
+
+    .slide:hover .slide-title {
+      color: #fca5a5;
+    }
+
+    .slide-desc {
+      font-size: 1rem;
+      color: #e2e8f0;
+      line-height: 1.5;
+      max-width: 90%;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 0.75rem;
+    }
+
+    .slider-dots {
+      position: absolute;
+      bottom: 1.25rem;
+      right: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      z-index: 10;
+    }
+
+    .slider-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.45);
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .slider-dot.active {
+      width: 32px;
+      border-radius: 6px;
+      background-color: var(--primary-red);
+      border-color: #ffffff;
+    }
+
+    .slider-ctrl {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: background-color var(--transition-speed);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .slider-ctrl:hover {
+      background-color: var(--primary-red);
+    }
+
+    .slider-ctrl.prev { left: 1rem; }
+    .slider-ctrl.next { right: 1rem; }
+
+    /* Hero Side Stories (3 items) */
+    .hero-side-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      height: 100%;
+    }
+
+    .hero-side-card {
+      flex: 1;
+      display: flex;
+      gap: 0.9rem;
+      background-color: var(--bg-surface);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      padding: 0.75rem;
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .hero-side-card:hover {
+      transform: translateX(4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--border-dark);
+    }
+
+    .hero-side-thumb {
+      width: 110px;
+      height: 85px;
+      border-radius: var(--radius-sm);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .hero-side-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+
+    .hero-side-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.35;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      color: var(--text-main);
+      transition: color var(--transition-speed);
+    }
+
+    .hero-side-card:hover .hero-side-title {
+      color: var(--primary-red);
+    }
+
+    /* 5 & 6. Main Content Layout (Latest News + Sidebar) */
+    .main-body-layout {
+      padding: 1.5rem 0 3rem;
+    }
+
+    .body-grid {
+      display: grid;
+      grid-template-columns: 2.3fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .latest-news-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+
+    /* Sidebar Widgets */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .sidebar-widget {
+      background-color: var(--bg-surface);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      padding: 1.25rem;
+    }
+
+    .widget-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--border-color);
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .widget-title::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 45px;
+      height: 2px;
+      background-color: var(--primary-red);
+    }
+
+    /* Most Read Widget */
+    .popular-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .popular-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px dashed var(--border-color);
+      cursor: pointer;
+      transition: transform var(--transition-speed);
+    }
+
+    .popular-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .popular-item:hover {
+      transform: translateX(4px);
+    }
+
+    .popular-num {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--primary-red);
+      opacity: 0.85;
+      min-width: 24px;
+    }
+
+    .popular-text {
+      flex: 1;
+    }
+
+    .popular-title {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--text-main);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      transition: color var(--transition-speed);
+    }
+
+    .popular-item:hover .popular-title {
+      color: var(--primary-red);
+    }
+
+    /* Weather Widget */
+    .weather-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    .weather-card {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .city-info h4 {
+      font-size: 1.0625rem;
+      font-weight: 700;
+    }
+
+    .city-info span {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    .temp-info {
+      text-align: right;
+    }
+
+    .temp-degree {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary-blue);
+    }
+
+    body.dark-mode .temp-degree {
+      color: #60a5fa;
+    }
+
+    /* Rates (Gold/Silver & Forex) */
+    .rates-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+
+    .rates-table th, .rates-table td {
+      padding: 0.6rem 0.5rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .rates-table th {
+      color: var(--text-muted);
+      font-weight: 600;
+      background-color: var(--bg-subtle);
+    }
+
+    .rates-table td.num {
+      text-align: right;
+      font-weight: 600;
+      font-family: var(--font-heading);
+    }
+
+    .demo-disclaimer {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.75rem;
+      padding: 0.4rem 0.6rem;
+      background-color: var(--bg-subtle);
+      border-left: 3px solid var(--primary-red);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    /* 7. Category Sections (Politics, Sports, Entertainment) */
+    .category-showcase-section {
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .category-four-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+
+    /* 8. Video Section */
+    .video-section {
+      padding: 3rem 0;
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+      color: #ffffff;
+      margin: 2rem 0;
+      border-radius: var(--radius-lg);
+    }
+
+    .video-section .section-title {
+      color: #ffffff;
+    }
+
+    .video-section .section-head {
+      border-bottom-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+
+    .video-card {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.25s ease, background-color 0.25s ease;
+    }
+
+    .video-card:hover {
+      transform: translateY(-4px);
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .video-thumb-wrap {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background-color: #000;
+    }
+
+    .video-thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+      transition: opacity 0.25s ease, transform 0.4s ease;
+    }
+
+    .video-card:hover .video-thumb-wrap img {
+      opacity: 1;
+      transform: scale(1.04);
+    }
+
+    .play-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .play-btn-circle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: var(--primary-red);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(200, 16, 46, 0.6);
+      transition: transform 0.25s ease, background-color 0.25s ease;
+    }
+
+    .video-card:hover .play-btn-circle {
+      transform: scale(1.15);
+      background-color: #ff2a4b;
+    }
+
+    .video-duration {
+      position: absolute;
+      bottom: 0.5rem;
+      right: 0.5rem;
+      background-color: rgba(0, 0, 0, 0.75);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+    }
+
+    .video-card-body {
+      padding: 0.9rem;
+    }
+
+    .video-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #f8fafc;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* 9. Opinion & Editorial */
+    .opinion-section {
+      padding: 2.5rem 0;
+    }
+
+    .opinion-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .opinion-card {
+      background-color: var(--bg-surface);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .opinion-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--border-dark);
+    }
+
+    .opinion-author-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .author-avatar {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      border: 2px solid var(--primary-red);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .author-meta h4 {
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .author-meta span {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    .opinion-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text-main);
+      transition: color var(--transition-speed);
+    }
+
+    .opinion-card:hover .opinion-title {
+      color: var(--primary-red);
+    }
+
+    .opinion-excerpt {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* 10. Horoscope Section */
+    .horoscope-section {
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .zodiac-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1rem;
+    }
+
+    .zodiac-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1rem 0.75rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .zodiac-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary-blue);
+      box-shadow: var(--shadow-md);
+      background-color: var(--primary-blue-light);
+    }
+
+    .zodiac-symbol {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: var(--bg-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      color: var(--primary-blue);
+      border: 1px solid var(--border-color);
+      transition: transform 0.25s ease;
+    }
+
+    .zodiac-card:hover .zodiac-symbol {
+      transform: scale(1.15) rotate(5deg);
+      background-color: var(--primary-blue);
+      color: #ffffff;
+    }
+
+    .zodiac-name {
+      font-family: var(--font-heading);
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .zodiac-short {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* 11. Newsletter Subscription */
+    .newsletter-section {
+      padding: 3rem 0;
+      margin: 2rem 0;
+    }
+
+    .newsletter-box {
+      background: linear-gradient(135deg, var(--primary-blue) 0%, #00225e 100%);
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .newsletter-info {
+      max-width: 520px;
+    }
+
+    .newsletter-info h3 {
+      font-size: 1.75rem;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .newsletter-info p {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+    }
+
+    .newsletter-form-wrap {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      padding: 0.85rem 1.25rem;
+      border-radius: var(--radius-sm);
+      border: 2px solid transparent;
+      outline: none;
+      font-size: 0.95rem;
+      font-family: inherit;
+    }
+
+    .newsletter-input:focus {
+      border-color: #fca5a5;
+    }
+
+    .newsletter-btn {
+      background-color: var(--primary-red);
+      color: #ffffff;
+      font-weight: 700;
+      padding: 0.85rem 1.5rem;
+      border-radius: var(--radius-sm);
+      transition: background-color var(--transition-speed);
+      white-space: nowrap;
+    }
+
+    .newsletter-btn:hover {
+      background-color: var(--primary-red-hover);
+    }
+
+    .newsletter-message {
+      margin-top: 0.75rem;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      display: none;
+    }
+
+    .newsletter-message.success {
+      display: block;
+      color: #86efac;
+    }
+
+    .newsletter-message.error {
+      display: block;
+      color: #fca5a5;
+    }
+
+    /* 12. Footer */
+    .site-footer {
+      background-color: #0b0f19;
+      color: #94a3b8;
+      border-top: 4px solid var(--primary-red);
+      padding: 3.5rem 0 1.5rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-col h4 {
+      font-size: 1.25rem;
+      color: #ffffff;
+      margin-bottom: 1.25rem;
+      position: relative;
+      padding-bottom: 0.4rem;
+    }
+
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 35px;
+      height: 2px;
+      background-color: var(--primary-red);
+    }
+
+    .footer-about p {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      color: #cbd5e1;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      font-size: 0.9375rem;
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
+      padding-left: 4px;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.9375rem;
+    }
+
+    .footer-social-row {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .social-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background-color: #1e293b;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-speed);
+      border: 1px solid #334155;
+    }
+
+    .social-btn:hover {
+      background-color: var(--primary-red);
+      border-color: var(--primary-red);
+      transform: translateY(-2px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #1e293b;
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.875rem;
+    }
+
+    /* Modal System */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .modal-backdrop.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-card {
+      background-color: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      max-width: 800px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: var(--shadow-xl);
+      border: 1px solid var(--border-color);
+      transform: scale(0.92);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .modal-backdrop.active .modal-card {
+      transform: scale(1);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: background-color var(--transition-speed);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .modal-close-btn:hover {
+      background-color: var(--primary-red);
+    }
+
+    .modal-hero-img {
+      width: 100%;
+      max-height: 380px;
+      object-fit: cover;
+      background-color: #000;
+    }
+
+    .modal-content-body {
+      padding: 2rem;
+    }
+
+    .modal-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .modal-article-title {
+      font-size: 1.85rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 1.25rem;
+      color: var(--text-main);
+    }
+
+    .modal-article-body {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .modal-article-body p.lead {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-main);
+      border-left: 4px solid var(--primary-red);
+      padding-left: 1rem;
+    }
+
+    .modal-article-body blockquote {
+      background-color: var(--bg-subtle);
+      border-left: 4px solid var(--primary-blue);
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-style: italic;
+    }
+
+    .modal-footer-actions {
+      margin-top: 2rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* Back to Top Button */
+    .back-to-top-btn {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: linear-gradient(135deg, var(--primary-red), #9e001a);
+      color: #ffffff;
+      padding: 0.65rem 1.15rem;
+      border-radius: 50px;
+      box-shadow: var(--shadow-lg);
+      font-weight: 700;
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      z-index: 35;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.25s ease;
+    }
+
+    .back-to-top-btn.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-to-top-btn:hover {
+      background: linear-gradient(135deg, #a50b24, #7f0015);
+      transform: translateY(-2px);
+    }
+
+    /* Animations */
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-15px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    .fade-in-section.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Category active banner */
+    .category-filter-banner {
+      display: none;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.5rem;
+      margin-bottom: 1.5rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .category-filter-banner.active {
+      display: flex;
+    }
+
+    .category-filter-banner h3 {
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .reset-filter-btn {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--primary-red);
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.35rem 0.75rem;
+      border: 1px solid var(--primary-red);
+      border-radius: var(--radius-sm);
+      transition: all var(--transition-speed);
+    }
+
+    .reset-filter-btn:hover {
+      background-color: var(--primary-red);
+      color: #ffffff;
+    }
+
+    /* Mobile Drawer */
+    .mobile-nav-drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 280px;
+      height: 100%;
+      background-color: var(--bg-surface);
+      z-index: 90;
+      box-shadow: var(--shadow-xl);
+      transform: translateX(-100%);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid var(--border-color);
+    }
+
+    .mobile-nav-drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .drawer-nav-list {
+      list-style: none;
+      padding: 1rem 0;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+
+    .drawer-nav-link {
+      display: block;
+      padding: 0.85rem 1.5rem;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.125rem;
+      color: var(--text-main);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .drawer-nav-link.active {
+      background-color: var(--primary-red-light);
+      color: var(--primary-red);
+      border-left: 4px solid var(--primary-red);
+    }
+
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 85;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+    }
+
+    .drawer-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-side-stack {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .body-grid {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        margin-top: 1.5rem;
+      }
+      .category-four-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .zodiac-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hamburger-btn {
+        display: flex;
+      }
+      .main-nav {
+        display: none;
+      }
+      .header-right-meta {
+        display: none;
+      }
+      .hero-side-stack {
+        grid-template-columns: 1fr;
+      }
+      .hero-slider-wrap, .slider-container {
+        min-height: 340px;
+      }
+      .slide-title {
+        font-size: 1.35rem;
+      }
+      .slide-desc {
+        display: none;
+      }
+      .latest-news-grid {
+        grid-template-columns: 1fr;
+      }
+      .category-four-grid {
+        grid-template-columns: 1fr;
+      }
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+      .opinion-grid {
+        grid-template-columns: 1fr;
+      }
+      .zodiac-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .newsletter-form {
+        flex-direction: column;
+      }
+      .back-to-top-btn {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.5rem 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo-text-group h1 {
+        font-size: 1.75rem;
+      }
+      .zodiac-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .top-bar-inner {
+        justify-content: center;
+      }
+    }
+
+    /* Accessibility / prefers-reduced-motion */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .ticker-marquee {
+        animation: none;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="date-badge">
+        <span class="date-pill" id="bs-date-display">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          वि.सं. २०८३ कार्तिक १०, सोमबार
+        </span>
+        <span class="date-pill" id="ad-date-display">
+          26 October 2026, Monday
+        </span>
+        <span class="date-pill" style="color: var(--primary-red); font-weight: 700;">
+          <span style="display:inline-block; width:6px; height:6px; background-color:var(--primary-red); border-radius:50%; margin-right:4px;"></span>
+          ताजा अपडेट
+        </span>
+      </div>
+
+      <div class="top-actions">
+        <button class="search-trigger-btn" id="search-toggle-btn" aria-label="समाचार खोज्नुहोस्">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>खोज्नुहोस्</span>
+        </button>
+
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="डार्क मोड टगल गर्नुहोस्">
+          <svg id="theme-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          <span id="theme-text">डार्क मोड</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Live Search Panel (Revealed on click) -->
+  <div class="search-panel" id="search-panel" role="search">
+    <div class="container search-panel-inner">
+      <div class="search-input-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="live-search-input" class="search-input" placeholder="समाचारको शीर्षक टाइप गरी तुरुन्त खोज्नुहोस्..." autocomplete="off">
+        <button class="search-close-btn" id="search-close-btn" aria-label="खोज बन्द गर्नुहोस्">✕ बन्द</button>
+      </div>
+      <div class="search-results-box" id="search-results-box" style="display: none;">
+        <div id="search-results-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-main-row">
+        <!-- Logo -->
+        <div class="logo-container" onclick="resetToHome()" role="banner" aria-label="नेपाल खबर गृहपृष्ठ">
+          <div class="flag-emblem">
+            <svg viewBox="0 0 100 115" width="100%" height="100%">
+              <path d="M 10 5 L 90 48 L 40 55 L 85 98 L 10 98 Z" fill="#C8102E" stroke="#003893" stroke-width="7" stroke-linejoin="round"/>
+              <!-- Sun / Moon stylized accents -->
+              <circle cx="36" cy="35" r="10" fill="#ffffff" />
+              <polygon points="36,65 39,73 47,73 41,78 43,86 36,81 29,86 31,78 25,73 33,73" fill="#ffffff" />
+            </svg>
+          </div>
+          <div class="logo-text-group">
+            <h1>Demo news</h1>
+            <div class="logo-tagline">सत्य, तथ्य र निष्पक्ष समाचार</div>
+          </div>
+        </div>
+
+        <!-- Header Right Quick Actions -->
+        <div class="header-right-meta">
+          <div style="display:flex; flex-direction:column; align-items:flex-end; gap:0.25rem;">
+            <span style="font-size:0.75rem; color:var(--text-muted); font-weight:600;">ट्रेन्डिङ विषयहरू:</span>
+            <div style="display:flex; gap:0.4rem;">
+              <span style="font-size:0.75rem; background:var(--bg-subtle); padding:0.15rem 0.5rem; border-radius:4px; font-weight:600; color:var(--primary-blue);">#बजेट२०८३</span>
+              <span style="font-size:0.75rem; background:var(--bg-subtle); padding:0.15rem 0.5rem; border-radius:4px; font-weight:600; color:var(--primary-red);">#क्रिकेट</span>
+              <span style="font-size:0.75rem; background:var(--bg-subtle); padding:0.15rem 0.5rem; border-radius:4px; font-weight:600; color:#047857;">#पर्यटन</span>
+            </div>
+          </div>
+          <a href="#newsletter-section" class="epaper-badge">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            न्युजलेटर
+          </a>
+        </div>
+
+        <!-- Hamburger Button for Mobile -->
+        <button class="hamburger-btn" id="mobile-menu-btn" aria-label="मेनु खोल्नुहोस्">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <!-- Main Desktop Navigation -->
+      <nav class="main-nav" aria-label="मुख्य नेभिगेसन">
+        <ul class="nav-list" id="nav-list">
+          <li class="nav-item"><a class="nav-link active" data-category="all" href="javascript:void(0)">मुख्य पृष्ठ</a></li>
+          <li class="nav-item"><a class="nav-link" data-category="राजनीति" href="javascript:void(0)">राजनीति</a></li>
+          <li class="nav-item"><a class="nav-link" data-category="अर्थतन्त्र" href="javascript:void(0)">अर्थतन्त्र</a></li>
+          <li class="nav-item"><a class="nav-link" data-category="समाज" href="javascript:void(0)">समाज</a></li>
+          <li class="nav-item"><a class="nav-link" data-category="खेलकुद" href="javascript:void(0)">खेलकुद</a></li>
+          <li class="nav-item"><a class="nav-link" data-category="मनोरञ्जन" href="javascript:void(0)">मनोरञ्जन</a></li>
+          <li class="nav-item"><a class="nav-link" data-category="प्रविधि" href="javascript:void(0)">प्रविधि</a></li>
+          <li class="nav-item"><a class="nav-link" data-category="विश्व" href="javascript:void(0)">विश्व</a></li>
+          <li class="nav-item"><a class="nav-link" data-category="विचार" href="javascript:void(0)">विचार</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobile-drawer" aria-label="मोबाइल नेभिगेसन">
+    <div class="drawer-header">
+      <div style="font-weight:700; font-size:1.25rem; color:var(--primary-red);">नेपाल खबर मेनु</div>
+      <button id="drawer-close-btn" style="font-size:1.5rem; color:var(--text-main);" aria-label="मेनु बन्द गर्नुहोस्">✕</button>
+    </div>
+    <ul class="drawer-nav-list" id="drawer-nav-list">
+      <!-- Injected by JS -->
+    </ul>
+  </aside>
+
+  <!-- 3. Breaking News Ticker -->
+  <div class="breaking-ticker-wrap">
+    <div class="ticker-label">
+      <span class="pulse-dot"></span>
+      ब्रेकिङ न्युज
+    </div>
+    <div class="ticker-content-track">
+      <div class="ticker-marquee" id="breaking-ticker-marquee">
+        <!-- Injected by JS with duplicates for seamless infinite scroll -->
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <!-- Active Category Filter Banner (Shown when a category is selected) -->
+    <div class="category-filter-banner" id="category-filter-banner">
+      <div>
+        <span style="font-size:0.8125rem; color:var(--text-muted); font-weight:600;">तपाईंले छान्नुभएको विधा:</span>
+        <h3 id="current-filter-title">
+          <span style="color:var(--primary-red);">●</span>
+          <span>राजनीति</span>
+        </h3>
+      </div>
+      <button class="reset-filter-btn" onclick="resetToHome()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+        सबै समाचार हेर्नुहोस् (मुख्य पृष्ठ)
+      </button>
+    </div>
+
+    <!-- 4. Hero Section -->
+    <section class="hero-section fade-in-section" id="hero-section">
+      <div class="hero-grid">
+        <!-- Left: Featured Slider (3 slides) -->
+        <div class="hero-slider-wrap" id="hero-slider-wrap">
+          <div class="slider-container" id="slider-container">
+            <!-- Injected by JS -->
+          </div>
+          <!-- Slider Controls -->
+          <button class="slider-ctrl prev" id="slider-prev-btn" aria-label="अघिल्लो समाचार">❮</button>
+          <button class="slider-ctrl next" id="slider-next-btn" aria-label="पछिल्लो समाचार">❯</button>
+          <div class="slider-dots" id="slider-dots"></div>
+        </div>
+
+        <!-- Right: 3 Smaller Featured Stories -->
+        <div class="hero-side-stack" id="hero-side-stack">
+          <!-- Injected by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 & 6. Latest News + Sidebar Layout -->
+    <section class="main-body-layout fade-in-section" id="latest-section">
+      <div class="body-grid">
+        <!-- Left: 6-8 Latest News Cards -->
+        <div class="latest-news-column">
+          <div class="section-head">
+            <h2 class="section-title">
+              <span class="section-title-icon">♦</span>
+              ताजा तथा मुख्य समाचारहरू
+            </h2>
+            <span class="time-badge">प्रत्येक घण्टा ताजा अपडेट</span>
+          </div>
+
+          <div class="latest-news-grid" id="latest-news-grid">
+            <!-- Injected by JS (8 cards) -->
+          </div>
+        </div>
+
+        <!-- Right: Sidebar Widgets -->
+        <aside class="sidebar" id="sidebar">
+          <!-- Widget 1: Most Read News (१-५) -->
+          <div class="sidebar-widget">
+            <h3 class="widget-title">
+              <span style="color:var(--primary-red);">★</span>
+              धेरै पढिएका समाचारहरू
+            </h3>
+            <ul class="popular-list" id="popular-news-list">
+              <!-- Injected by JS (5 items) -->
+            </ul>
+          </div>
+
+          <!-- Widget 2: Today's Weather -->
+          <div class="sidebar-widget">
+            <h3 class="widget-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:#0284c7;"><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path><circle cx="12" cy="12" r="5"></circle></svg>
+              आजको मौसम
+            </h3>
+            <div class="weather-grid" id="weather-grid">
+              <!-- Injected by JS (Kathmandu, Pokhara, Biratnagar) -->
+            </div>
+            <div class="demo-disclaimer">
+              * नमुना तथ्याङ्क: यो केवल प्रदर्शनीका लागि राखिएको काल्पनिक मौसम विवरण हो।
+            </div>
+          </div>
+
+          <!-- Widget 3: Gold and Silver Prices -->
+          <div class="sidebar-widget">
+            <h3 class="widget-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--accent-gold);"><circle cx="12" cy="12" r="8"></circle><path d="M12 2v4"></path><path d="M12 18v4"></path></svg>
+              सुन र चाँदीको भाउ
+            </h3>
+            <table class="rates-table">
+              <thead>
+                <tr>
+                  <th>वस्तु</th>
+                  <th>एकाइ</th>
+                  <th style="text-align:right;">मूल्य (रु.)</th>
+                </tr>
+              </thead>
+              <tbody id="bullion-rates-body">
+                <!-- Injected by JS -->
+              </tbody>
+            </table>
+            <div class="demo-disclaimer">
+              * नमुना तथ्याङ्क: यो बजारको वास्तविक मूल्य होइन, डेमो डाटा मात्र हो।
+            </div>
+          </div>
+
+          <!-- Widget 4: Foreign Exchange Rates -->
+          <div class="sidebar-widget">
+            <h3 class="widget-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:#059669;"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              विदेशी विनिमय दर
+            </h3>
+            <table class="rates-table">
+              <thead>
+                <tr>
+                  <th>मुद्रा</th>
+                  <th>एकाइ</th>
+                  <th style="text-align:right;">खरिद</th>
+                  <th style="text-align:right;">बिक्री</th>
+                </tr>
+              </thead>
+              <tbody id="forex-rates-body">
+                <!-- Injected by JS -->
+              </tbody>
+            </table>
+            <div class="demo-disclaimer">
+              * नमुना तथ्याङ्क: यो विनिमय दर केवल वेबसाइट परीक्षण र प्रदर्शनीका लागि हो।
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 7. Category Sections (Politics, Sports, Entertainment) -->
+    <div id="category-sections-wrapper">
+      <!-- Section A: Politics -->
+      <section class="category-showcase-section fade-in-section" id="cat-section-politics">
+        <div class="section-head">
+          <h2 class="section-title">
+            <span style="color:var(--primary-red);">■</span>
+            राजनीति
+          </h2>
+          <a href="javascript:void(0)" onclick="filterByCategory('राजनीति')" class="section-more-link">
+            थप राजनीति समाचार ❯
+          </a>
+        </div>
+        <div class="category-four-grid" id="politics-grid">
+          <!-- Injected by JS (4 articles) -->
+        </div>
+      </section>
+
+      <!-- Section B: Sports -->
+      <section class="category-showcase-section fade-in-section" id="cat-section-sports">
+        <div class="section-head">
+          <h2 class="section-title">
+            <span style="color:#b45309;">■</span>
+            खेलकुद
+          </h2>
+          <a href="javascript:void(0)" onclick="filterByCategory('खेलकुद')" class="section-more-link">
+            थप खेल समाचार ❯
+          </a>
+        </div>
+        <div class="category-four-grid" id="sports-grid">
+          <!-- Injected by JS (4 articles) -->
+        </div>
+      </section>
+
+      <!-- Section C: Entertainment -->
+      <section class="category-showcase-section fade-in-section" id="cat-section-entertainment">
+        <div class="section-head">
+          <h2 class="section-title">
+            <span style="color:#7c3aed;">■</span>
+            मनोरञ्जन
+          </h2>
+          <a href="javascript:void(0)" onclick="filterByCategory('मनोरञ्जन')" class="section-more-link">
+            थप मनोरञ्जन समाचार ❯
+          </a>
+        </div>
+        <div class="category-four-grid" id="entertainment-grid">
+          <!-- Injected by JS (4 articles) -->
+        </div>
+      </section>
+    </div>
+
+    <!-- 8. Video Section -->
+    <section class="video-section fade-in-section" id="video-section">
+      <div style="padding: 0 1.5rem;">
+        <div class="section-head">
+          <h2 class="section-title">
+            <span style="color:var(--primary-red);">▶</span>
+            भिडियो विशेषाङ्क
+          </h2>
+          <span style="font-size:0.875rem; color:#cbd5e1;">स्थलगत रिपोर्टिङ र भिडियो वार्ताहरू</span>
+        </div>
+        <div class="video-grid" id="video-grid">
+          <!-- Injected by JS (4 video cards) -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Opinion and Editorial -->
+    <section class="opinion-section fade-in-section" id="opinion-section">
+      <div class="section-head">
+        <h2 class="section-title">
+          <span style="color:#be185d;">✒</span>
+          विचार र दृष्टिकोण
+        </h2>
+        <span class="time-badge">विज्ञ तथा स्तम्भकारहरूका विश्लेषण</span>
+      </div>
+      <div class="opinion-grid" id="opinion-grid">
+        <!-- Injected by JS (3 articles) -->
+      </div>
+    </section>
+
+    <!-- 10. Daily Horoscope (12 Signs) -->
+    <section class="horoscope-section fade-in-section" id="horoscope-section">
+      <div class="section-head">
+        <h2 class="section-title">
+          <span style="color:var(--primary-blue);">☸</span>
+          आजको राशिफल (१२ राशि फल)
+        </h2>
+        <span class="time-badge">कुनै पनि राशिमा थिचेर विस्तृत फल पढ्नुहोस्</span>
+      </div>
+      <div class="zodiac-grid" id="zodiac-grid">
+        <!-- Injected by JS (12 zodiacs) -->
+      </div>
+    </section>
+
+    <!-- 11. Newsletter Subscription -->
+    <section class="newsletter-section fade-in-section" id="newsletter-section">
+      <div class="newsletter-box">
+        <div class="newsletter-info">
+          <h3>दैनिक ताजा समाचार इमेलमा पाउनुहोस्</h3>
+          <p>हरेक बिहान मुख्य राष्ट्रिय तथा अन्तर्राष्ट्रिय घटनाहरूको सार-संक्षेप सिधै आफ्नो इमेलमा निःशुल्क प्राप्त गर्नुहोस्।</p>
+        </div>
+        <div class="newsletter-form-wrap">
+          <form class="newsletter-form" id="newsletter-form" novalidate>
+            <input type="email" id="newsletter-email" class="newsletter-input" placeholder="तपाईंको इमेल ठेगाना लेख्नुहोस्..." required>
+            <button type="submit" class="newsletter-btn">सदस्य बन्नुहोस्</button>
+          </form>
+          <div class="newsletter-message" id="newsletter-message"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 12. Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: About Us -->
+        <div class="footer-col footer-about">
+          <h4>हाम्रो बारेमा</h4>
+          <p><strong>Demo news</strong> निष्पक्ष, सत्य र तथ्यमा आधारित पत्रकारिताका लागि प्रतिबद्ध डिजिटल समाचार पत्रिका हो। हामी समाज, राजनीति, अर्थ, खेलकुद तथा प्रविधिका हरेक आयामलाई पाठकसमक्ष जिम्मेवारीपूर्वक प्रस्तुत गर्दछौँ।</p>
+          <div style="font-size:0.8125rem; color:#94a3b8; border-top:1px solid #1e293b; padding-top:0.75rem;">
+            प्रधान सम्पादक: नारायण प्रसाद शर्मा<br>
+            सूचना तथा प्रसारण विभाग दर्ता नं.: १२३४/०८२-८३
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links / Navigation -->
+        <div class="footer-col">
+          <h4>महत्वपूर्ण लिङ्कहरू</h4>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" onclick="resetToHome()">मुख्य पृष्ठ</a></li>
+            <li><a href="javascript:void(0)" onclick="filterByCategory('राजनीति')">राजनीति समाचार</a></li>
+            <li><a href="javascript:void(0)" onclick="filterByCategory('अर्थतन्त्र')">अर्थतन्त्र र बजार</a></li>
+            <li><a href="javascript:void(0)" onclick="filterByCategory('खेलकुद')">खेलकुद संसार</a></li>
+            <li><a href="javascript:void(0)" onclick="filterByCategory('विचार')">विचार र स्तम्भ</a></li>
+            <li><a href="#horoscope-section">आजको राशिफल</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Privacy and Terms -->
+        <div class="footer-col">
+          <h4>नीति तथा सर्तहरू</h4>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" onclick="openPrivacyModal()">गोपनीयता नीति (Privacy Policy)</a></li>
+            <li><a href="javascript:void(0)" onclick="openTermsModal()">प्रयोगका सर्तहरू (Terms of Use)</a></li>
+            <li><a href="javascript:void(0)" onclick="openEditorialCodeModal()">पत्रकारिता आचारसंहिता</a></li>
+            <li><a href="javascript:void(0)" onclick="openAdModal()">विज्ञापनका लागि सम्पर्क</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact & Socials -->
+        <div class="footer-col">
+          <h4>सम्पर्क ठेगाना</h4>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--primary-red);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>अनामनगर, काठमाडौं, नेपाल</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--primary-red);"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>+९७७-१-४७८०००० / ४७८०००१</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--primary-red);"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>news@nepalkhabar.demo</span>
+          </div>
+
+          <div class="footer-social-row">
+            <a href="javascript:void(0)" class="social-btn" aria-label="फेसबुक" title="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="javascript:void(0)" class="social-btn" aria-label="ट्विटर" title="Twitter / X">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+            </a>
+            <a href="javascript:void(0)" class="social-btn" aria-label="युट्युब" title="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33zM9.75 15.02l-.01-6.54 5.75 3.27-5.74 3.27z"></path></svg>
+            </a>
+            <a href="javascript:void(0)" class="social-btn" aria-label="इन्स्टाग्राम" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © २०२६ नेपाल खबर (नेपाल खबर डिजिटल नेटवर्क प्रा. लि.)। सर्वाधिकार सुरक्षित।
+        </div>
+        <div style="color:#64748b; font-size:0.8125rem;">
+          सत्य, तथ्य र निष्पक्ष पत्रकारिताका लागि समर्पित नमुना समाचार पोर्टल
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- News Article Reading Modal -->
+  <div class="modal-backdrop" id="article-modal" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="बन्द गर्नुहोस्">✕</button>
+      <img id="modal-image" class="modal-hero-img" src="" alt="समाचार तस्बिर">
+      <div class="modal-content-body">
+        <div class="modal-meta-row">
+          <span id="modal-category" class="cat-badge">राजनीति</span>
+          <span id="modal-date" class="time-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            २ घण्टा अगाडि
+          </span>
+          <span id="modal-author" style="font-size:0.875rem; color:var(--text-muted); font-weight:600;">
+            ✍ संवाददाता: नेपाल खबर ब्युरो
+          </span>
+        </div>
+        <h2 id="modal-headline" class="modal-article-title"></h2>
+        
+        <div id="modal-text" class="modal-article-body">
+          <!-- Populated by JS -->
+        </div>
+
+        <div class="modal-footer-actions">
+          <div style="display:flex; align-items:center; gap:0.5rem;">
+            <span style="font-size:0.875rem; font-weight:600; color:var(--text-muted);">यो समाचार सेयर गर्नुहोस्:</span>
+            <button onclick="shareArticle('facebook')" class="social-btn" style="width:32px; height:32px;" title="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></button>
+            <button onclick="shareArticle('twitter')" class="social-btn" style="width:32px; height:32px;" title="Twitter"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></button>
+            <button onclick="copyArticleLink()" class="social-btn" style="width:32px; height:32px;" title="Copy Link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+            <span id="copy-feedback" style="font-size:0.8125rem; color:#059669; font-weight:600; display:none;">लिङ्क कपी भयो!</span>
+          </div>
+          <button class="reset-filter-btn" onclick="closeArticleModal()">बन्द गर्नुहोस्</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Horoscope Detail Modal -->
+  <div class="modal-backdrop" id="horoscope-modal" role="dialog" aria-modal="true">
+    <div class="modal-card" style="max-width: 550px;">
+      <button class="modal-close-btn" onclick="closeHoroscopeModal()" aria-label="बन्द गर्नुहोस्">✕</button>
+      <div class="modal-content-body" style="padding-top:2.5rem;">
+        <div style="text-align:center; margin-bottom:1.5rem;">
+          <div id="modal-zodiac-icon" style="font-size:3rem; margin-bottom:0.5rem;">♈</div>
+          <h2 id="modal-zodiac-title" style="font-size:1.85rem; font-weight:800; color:var(--primary-blue);"></h2>
+          <span style="font-size:0.875rem; color:var(--text-muted); font-weight:600;">आजको विस्तृत ग्रहगोचर तथा फल</span>
+        </div>
+        <div id="modal-zodiac-body" style="font-size:1.0625rem; line-height:1.8; color:var(--text-main); margin-bottom:1.5rem;"></div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; background:var(--bg-subtle); padding:1rem; border-radius:var(--radius-sm); border:1px solid var(--border-color); font-size:0.875rem;">
+          <div><strong>शुभ रङ्ग:</strong> <span id="modal-zodiac-color">रातो</span></div>
+          <div><strong>शुभ अङ्क:</strong> <span id="modal-zodiac-number">३ र ९</span></div>
+          <div><strong>सकारात्मक पक्ष:</strong> <span id="modal-zodiac-strength">उत्साह, नेतृत्व</span></div>
+          <div><strong>सावधानी:</strong> <span id="modal-zodiac-caution">क्रोध र हतार</span></div>
+        </div>
+        <div style="margin-top:1.5rem; text-align:center;">
+          <button class="reset-filter-btn" style="margin:0 auto;" onclick="closeHoroscopeModal()">बन्द गर्नुहोस्</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- General Info Modal (Privacy Policy, Terms, etc.) -->
+  <div class="modal-backdrop" id="info-modal" role="dialog" aria-modal="true">
+    <div class="modal-card" style="max-width: 650px;">
+      <button class="modal-close-btn" onclick="closeInfoModal()" aria-label="बन्द गर्नुहोस्">✕</button>
+      <div class="modal-content-body" style="padding-top:2rem;">
+        <h2 id="info-modal-title" style="font-size:1.6rem; font-weight:800; margin-bottom:1rem; color:var(--primary-red);"></h2>
+        <div id="info-modal-content" style="font-size:0.95rem; line-height:1.75; color:var(--text-main); display:flex; flex-direction:column; gap:1rem;"></div>
+        <div style="margin-top:1.5rem; text-align:right;">
+          <button class="reset-filter-btn" onclick="closeInfoModal()">ठीक छ, बुझेँ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top-btn" id="back-to-top" aria-label="माथि जानुहोस्">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+    <span>माथि जानुहोस्</span>
+  </button>
+
+  <!-- All JavaScript Application Logic -->
+  <script>
+    // ==========================================
+    // 1. DATA STORES (Mock Data in Devanagari)
+    // ==========================================
+
+    // Safe SVG fallback generator for images
+    function getFallbackImage(title, category) {
+      const colors = {
+        'राजनीति': ['#C8102E', '#9E001A'],
+        'खेलकुद': ['#b45309', '#92400e'],
+        'मनोरञ्जन': ['#7c3aed', '#6d28d9'],
+        'अर्थतन्त्र': ['#047857', '#065f46'],
+        'समाज': ['#0369a1', '#075985'],
+        'प्रविधि': ['#0d9488', '#115e59'],
+        'विश्व': ['#4b5563', '#374151'],
+        'विचार': ['#be185d', '#9d174d']
+      };
+      const [c1, c2] = colors[category] || ['#003893', '#002663'];
+      const escapedTitle = title.replace(/"/g, '&quot;').slice(0, 30);
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+        <defs>
+          <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="${c1}" />
+            <stop offset="100%" stop-color="${c2}" />
+          </linearGradient>
+        </defs>
+        <rect width="600" height="400" fill="url(#g)"/>
+        <circle cx="300" cy="170" r="45" fill="rgba(255,255,255,0.15)"/>
+        <text x="300" y="180" font-family="'Mukta', sans-serif" font-size="28" fill="#ffffff" font-weight="bold" text-anchor="middle">नेपाल खबर</text>
+        <rect x="220" y="225" width="160" height="30" rx="6" fill="rgba(0,0,0,0.3)"/>
+        <text x="300" y="245" font-family="'Noto Sans Devanagari', sans-serif" font-size="16" fill="#ffffff" font-weight="bold" text-anchor="middle">${category}</text>
+        <text x="300" y="320" font-family="'Noto Sans Devanagari', sans-serif" font-size="18" fill="rgba(255,255,255,0.9)" text-anchor="middle">${escapedTitle}...</text>
+      </svg>`;
+      return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+    }
+
+    // Breaking news headlines
+    const breakingHeadlines = [
+      "संसद्को बजेट अधिवेशन आजदेखि सुरु: नयाँ आर्थिक नीतिको कार्ययोजना पेस गरिँदै",
+      "नेपाली क्रिकेट टोलीले एसिया कप छनोटमा रोमाञ्चक जित हासिल गर्यो",
+      "काठमाडौंमा नयाँ स्मार्ट सडक विस्तार योजनाको पहिलो चरण सार्वजनिक",
+      "अन्तर्राष्ट्रिय बजारको प्रभाव: सुन तोलाको मूल्य बढ्यो, ग्राहक चिन्तित",
+      "विद्यार्थीका लागि राष्ट्रियस्तरको निःशुल्क कोडिङ तथा एआई तालिम सुरु"
+    ];
+
+    // Master list of news articles
+    const allNewsArticles = [
+      // 1-3: Featured Slider Stories
+      {
+        id: "hero-1",
+        title: "संसद्को बजेट अधिवेशन आजदेखि सुरु",
+        category: "राजनीति",
+        categoryClass: "politics",
+        image: "https://picsum.photos/id/1018/1200/700",
+        author: "प्रकाश थापा",
+        date: "वि.सं. २०८३ कार्तिक १०",
+        relativeTime: "२ घण्टा अगाडि",
+        excerpt: "संसद्को हिउँदे अधिवेशन आजदेखि नयाँ बानेश्वरस्थित संसद् भवनमा औपचारिक रूपमा सुरु भएको छ। आगामी बजेट तथा प्राथमिकताका बारेमा छलफल केन्द्रित रहनेछ।",
+        content: `सङ्घीय संसद्को नयाँ बजेट अधिवेशन आज दिउँसो १ बजेदेखि औपचारिक रूपमा सुरु भएको छ। नयाँ बानेश्वरस्थित संसद् भवनमा सभामुखको अध्यक्षतामा बसेको बैठकमा सबै राजनीतिक दलका प्रमुख सचेतकहरूले आ-आफ्ना दलको धारणा राखेका छन्।\n\nयस अधिवेशनमा सरकारले आगामी आर्थिक वर्षको वार्षिक नीति तथा कार्यक्रम, बजेटका सिद्धान्त र प्राथमिकता, तथा राष्ट्रिय महत्त्वका विभिन्न १५ वटा नयाँ विधेयकहरू पेस गर्ने कार्यतालिका रहेको संसद् सचिवालयले जनाएको छ।\n\nअर्थमन्त्रीले देशको वर्तमान समष्टिगत आर्थिक सूचकहरू सन्तोषजनक रहेको उल्लेख गर्दै रोजगारी सिर्जना, उत्पादन वृद्धि र डिजिटल पूर्वाधार विकासलाई प्राथमिकतामा राखेर बजेट तर्जुमा भइरहेको बताउनुभयो। प्रतिपक्षी दलहरूले भने मूल्यवृद्धि नियन्त्रण र जनताका प्रत्यक्ष समस्या समाधानमा सरकार गम्भीर हुनुपर्ने माग राखेका छन्।\n\nसंसद्को अर्को बैठक भोलि बिहान ११ बजे बस्ने तय भएको छ।`
+      },
+      {
+        id: "hero-2",
+        title: "नेपाली क्रिकेट टोलीले एसिया कप छनोटमा जित्यो",
+        category: "खेलकुद",
+        categoryClass: "sports",
+        image: "https://picsum.photos/id/1058/1200/700",
+        author: "सन्दीप दाहाल",
+        date: "वि.सं. २०८३ कार्तिक १०",
+        relativeTime: "३ घण्टा अगाडि",
+        excerpt: "त्रिवि अन्तर्राष्ट्रिय क्रिकेट मैदान कीर्तिपुरमा भएको रोमाञ्चक खेलमा नेपालले अन्तिम ओभरमा जित हात पार्दै एसिया कपको स्थान सुरक्षित गर्यो।",
+        content: `नेपाली राष्ट्रिय क्रिकेट टोलीले उत्कृष्ट पुनरागमन गर्दै एसिया कप छनोटको अन्तिम खेलमा ३ विकेटको रोमाञ्चक जित हासिल गरेको छ। कीर्तिपुरस्थित त्रिवि क्रिकेट मैदानमा भएको खेलमा हजारौँ घरेलु दर्शकहरूको उत्साहपूर्ण समर्थनबीच नेपालले निर्धारित २८० रनको लक्ष्य अन्तिम ओभरको चौथो बलमा भेटाएको हो।\n\nनेपालका लागि मध्यक्रमका ब्याटरले शतकीय इनिङ्स खेल्दै टोलीको जितको आधार तयार पारेका थिए भने बलरहरूले अन्तिम १० ओभरमा किफायती बलिङ गरेका थिए। खेलपछि कप्तानले यो जित सम्पूर्ण नेपाली क्रिकेटप्रेमीहरूको निरन्तर माया र खेलाडीहरूको कडा मिहिनेतको परिणाम भएको प्रतिक्रिया दिनुभयो।\n\nयस ऐतिहासिक जितसँगै नेपालले आगामी महिना आयोजना हुने एसिया कपको मुख्य चरणमा भारत र पाकिस्तान रहेको समूहमा प्रतिस्पर्धा गर्नेछ।`
+      },
+      {
+        id: "hero-3",
+        title: "काठमाडौंमा नयाँ सडक विस्तार योजना सार्वजनिक",
+        category: "समाज",
+        categoryClass: "society",
+        image: "https://picsum.photos/id/1029/1200/700",
+        author: "सृजना अधिकारी",
+        date: "वि.सं. २०८३ कार्तिक १०",
+        relativeTime: "४ घण्टा अगाडि",
+        excerpt: "काठमाडौं उपत्यकाको ट्राफिक जाम न्यूनीकरण गर्न आधुनिक साइकल लेन, हरियाली र फ्लाईओभर सहितको नयाँ सडक सञ्जाल गुरुयोजना सार्वजनिक गरिएको छ।",
+        content: `काठमाडौं उपत्यका विकास प्राधिकरण र भौतिक पूर्वाधार मन्त्रालयको संयुक्त पहलमा 'स्मार्ट काठमाडौं सडक सञ्जाल २०८५' गुरुयोजना आज एक समारोहबीच सार्वजनिक गरियो। योजनाअनुसार चक्रपथ वरपर पाँच प्रमुख चोकहरूमा आधुनिक फ्लाईओभर र अन्डरपास निर्माण गरिनेछ।\n\nपरियोजनाले पैदलयात्रीको सुरक्षाका लागि ३५ किलोमिटर लामो सुरक्षित फुटपाथ र साइकल लेनलाई अनिवार्य गरेको छ। साथै, सडक किनारमा रैथाने प्रजातिका रुखहरू रोपी हरित करिडोर निर्माण गरिनेछ।\n\nपहिलो चरणको निर्माण कार्य आगामी महिनादेखि सुरु भई दुई वर्षभित्र सम्पन्न गर्ने लक्ष्य लिइएको छ। यसबाट उपत्यकाको दैनिक ट्राफिक चापमा कम्तीमा ४० प्रतिशत कमी आउने विज्ञहरूको अनुमान छ।`
+      },
+
+      // 4-6: Hero Side Stories
+      {
+        id: "hero-side-1",
+        title: "पर्यटक आगमनमा यस वर्ष उल्लेख्य वृद्धि",
+        category: "अर्थतन्त्र",
+        categoryClass: "economy",
+        image: "https://picsum.photos/id/1036/600/400",
+        author: "सुमन पोखरेल",
+        date: "वि.सं. २०८३ कार्तिक १०",
+        relativeTime: "२ घण्टा अगाडि",
+        excerpt: "नेपाल पर्यटन बोर्डका अनुसार यस वर्ष हवाई तथा स्थलमार्गबाट १० लाखभन्दा बढी विदेशी पर्यटक नेपाल भित्रिएका छन्।",
+        content: `चालु वर्षको सुरुवाती १० महिनामै नेपाल भ्रमणमा आउने विदेशी पर्यटकको संख्या १० लाख नाघेको नेपाल पर्यटन बोर्डको तथ्याङ्कले देखाएको छ।\n\nविशेष गरी अन्नपूर्ण पदमार्ग, सगरमाथा क्षेत्र, पोखरा र लुम्बिनीमा पर्यटकहरूको उपस्थिति उल्लेख्य रहेको छ। होटल व्यवसायी महासंघले यस वर्ष होटल बुकिङ दर ८५ प्रतिशतभन्दा माथि पुगेको जनाएको छ।\n\nपर्यटन क्षेत्रमा आएको यस सुधारले विदेशी मुद्रा सञ्चिति बढाउनुका साथै हजारौँ युवाहरूलाई प्रत्यक्ष रोजगारी उपलब्ध गराएको छ।`
+      },
+      {
+        id: "hero-side-2",
+        title: "नयाँ चलचित्रले पहिलो हप्तामै रेकर्ड कमाइ गर्यो",
+        category: "मनोरञ्जन",
+        categoryClass: "entertainment",
+        image: "https://picsum.photos/id/1040/600/400",
+        author: "अस्मिता श्रेष्ठ",
+        date: "वि.सं. २०८३ कार्तिक १०",
+        relativeTime: "३ घण्टा अगाडि",
+        excerpt: "मौलिक नेपाली परिवेशमा आधारित नयाँ सामाजिक चलचित्रले घरेलु तथा अन्तर्राष्ट्रिय बक्स अफिसमा ऐतिहासिक सफलता हासिल गरेको छ।",
+        content: `नेपाली चलचित्र उद्योगमा फेरि नयाँ उत्साह थपिएको छ। मौलिक कथावस्तु र सशक्त अभिनयले सजिएको नयाँ चलचित्रले रिलिजको पहिलो सात दिनमै १० करोड रुपैयाँभन्दा बढीको ग्रस कलेक्सन गर्दै नयाँ कीर्तिमान कायम गरेको छ।\n\nहलहरूमा दर्शकको भीड थामिनसक्नु छ। अस्ट्रेलिया, अमेरिका र युरोपका विभिन्न शहरहरूमा समेत चलचित्रका अधिकांश शोहरू हाउसफुल भइरहेका छन्। चलचित्र विश्लेषकहरूले यसलाई नेपाली सिनेमाको स्वर्ण युगको संकेत मानेका छन्।`
+      },
+      {
+        id: "hero-side-3",
+        title: "विद्यार्थीका लागि निःशुल्क कोडिङ तालिम सुरु",
+        category: "प्रविधि",
+        categoryClass: "tech",
+        image: "https://picsum.photos/id/1060/600/400",
+        author: "दीपक रिजाल",
+        date: "वि.सं. २०८३ कार्तिक १०",
+        relativeTime: "५ घण्टा अगाडि",
+        excerpt: "डिजिटल नेपाल अभियानअन्तर्गत देशभरका सामुदायिक विद्यालयका १० हजार विद्यार्थीलाई सफ्टवेयर प्रोग्रामिङ र एआईको तालिम दिइने भएको छ।",
+        content: `शिक्षा मन्त्रालय र सूचना प्रविधि विभागको संयुक्त आयोजनामा देशभरका सरकारी तथा सामुदायिक विद्यालयमा अध्ययनरत विद्यार्थीहरूका लागि तीन महिने निःशुल्क अनलाइन तथा प्रत्यक्ष कोडिङ बुटक्याम्प सुरु भएको छ।\n\nतालिममा पाइथन प्रोग्रामिङ, वेब डेभलपमेन्ट, साइबर सुरक्षा र आर्टिफिसियल इन्टेलिजेन्सका आधारभूत सीप सिकाइनेछ। सफल सहभागीहरूलाई इन्टर्नसिप र प्रमाणपत्र समेत प्रदान गरिने आयोजकले जानकारी दिएका छन्।`
+      },
+
+      // 7-14: Latest News (8 cards)
+      {
+        id: "latest-1",
+        title: "सुन तोलाको मूल्य बढ्यो, ग्राहक चिन्तित",
+        category: "अर्थतन्त्र",
+        categoryClass: "economy",
+        image: "https://picsum.photos/id/1062/600/400",
+        author: "मनिष कार्की",
+        date: "वि.सं. २०८३ कार्तिक १०",
+        relativeTime: "१ घण्टा अगाडि",
+        excerpt: "अन्तर्राष्ट्रिय बजारमा डलरको उतारचढाव र भू-राजनीतिक तनावका कारण स्थानीय बजारमा सुनको मूल्य प्रतितोला रु. १,६२,५०० पुगेको छ।",
+        content: `नेपाल सुनचाँदी व्यवसायी महासंघका अनुसार आज सुनको मूल्यमा फेरि प्रतितोला एक हजार रुपैयाँको वृद्धि भएको छ। यससँगै छापावाल सुन प्रतितोला १ लाख ६२ हजार ५०० रुपैयाँ पुगेको छ।\n\nलगानीकर्ताहरू सुरक्षित सम्पत्तितर्फ आकर्षित हुँदा अन्तर्राष्ट्रिय स्तरमै बहुमूल्य धातुको माग बढेको व्यवसायीहरूको भनाइ छ। चाडपर्वको मुखमा भाउ अकासिँदा सर्वसाधारण ग्राहकहरू भने गहना खरिद गर्न हिचकिचाइरहेका छन्।`
+      },
+      {
+        id: "latest-2",
+        title: "कृषकका लागि आधुनिक चिस्यान केन्द्रको निर्माण सम्पन्न",
+        category: "समाज",
+        categoryClass: "society",
+        image: "https://picsum.photos/id/1070/600/400",
+        author: "हेमन्त न्यौपाने",
+        date: "वि.सं. २०८३ कार्तिक १०",
+        relativeTime: "२ घण्टा अगाडि",
+        excerpt: "धादिङ र चितवनका तरकारी उत्पादक कृषकलाई लक्षित गरी ५ हजार मेट्रिक टन क्षमताको अत्याधुनिक शीतभण्डार सञ्चालनमा आएको छ।",
+        content: `तरकारी र फलफूल उत्पादनको प्रमुख केन्द्र मानिने मध्य तराई र पहाडी जिल्लाका कृषकहरूको सुविधाका लागि आधुनिक शीतभण्डार (कोल्ड स्टोर) निर्माण सम्पन्न भएको छ।\n\nअब कृषकहरूले आफ्नो उत्पादन उचित मूल्य नपाउञ्जेल सुरक्षित भण्डारण गर्न सक्नेछन्। यसले बिचौलियाको भर पर्नुपर्ने बाध्यता हटाउने र कृषकको आम्दानी कम्तीमा २५ प्रतिशतले वृद्धि गर्ने अपेक्षा गरिएको छ।`
+      },
+      {
+        id: "latest-3",
+        title: "राष्ट्रिय महिला भलिबल प्रतियोगिता पोखरामा सुरु",
+        category: "खेलकुद",
+        categoryClass: "sports",
+        image: "https://picsum.photos/id/1080/600/400",
+        author: "रोशन गिरी",
+        date: "वि.सं. २०८३ कार्तिक १०",
+        relativeTime: "३ घण्टा अगाडि",
+        excerpt: "सातवटै प्रदेश र तीन विभागीय टोलीहरूको सहभागितामा पोखरा रंगशालामा राष्ट्रिय महिला भलिबल लिगको भव्य उद्घाटन गरिएको छ।",
+        content: `पोखरा रंगशालामा आज आयोजित विशेष समारोहबीच राष्ट्रिय महिला भलिबल लिगको नयाँ संस्करण सुरु भएको छ। उद्घाटन खेलमा नेपाल पुलिस क्लबले गण्डकी प्रदेशलाई सोझो सेटमा पराजित गर्यो।\n\nप्रतियोगिता आगामी एक सातासम्म चल्नेछ। विजेता टोलीलाई नगद रु. ५ लाखसहित ट्रफी र प्रमाणपत्र प्रदान गरिने आयोजक नेपाल भलिबल संघले जनाएको छ।`
+      },
+      {
+        id: "latest-4",
+        title: "नेपालमै बन्यो नयाँ इलेक्ट्रिक स्कुटर, मूल्य प्रतिस्पर्धी",
+        category: "प्रविधि",
+        categoryClass: "tech",
+        image: "https://picsum.photos/id/1071/600/400",
+        author: "इन्जिनियर सन्तोष भट्ट",
+        date: "वि.सं. २०८३ कार्तिक १०",
+        relativeTime: "४ घण्टा अगाडि",
+        excerpt: "नेपाली युवा इन्जिनियरहरूको समूहले एक पटकको चार्जमा १२० किलोमिटर गुड्ने नयाँ इलेक्ट्रिक स्कुटर व्यावसायिक रूपमा सार्वजनिक गरेको छ।",
+        content: `काठमाडौंमा आयोजित अटोमोबाइल एक्स्पोमा नेपाली कम्पनीद्वारा स्वदेशमै डिजाइन र एसेम्बल गरिएको विद्युतीय स्कुटर प्रदर्शन गरिएको छ।\n\nयस स्कुटरमा उन्नत लिथियम-आयन ब्याट्री, स्मार्ट मोबाइल एप कनेक्सन, र नेपाली कच्ची सडक सुहाउँदो ग्राउन्ड क्लियरेन्स रहेको छ। कम्पनीले आगामी महिनादेखि बजारमा अग्रिम बुकिङ खुला गर्ने घोषणा गरेको छ।`
+      },
+      {
+        id: "latest-5",
+        title: "जलवायु परिवर्तनका कारण हिमाल पग्लिने क्रम तीव्र: प्रतिवेदन",
+        category: "विश्व",
+        categoryClass: "world",
+        image: "https://picsum.photos/id/1039/600/400",
+        author: "डा. विनोद भण्डारी",
+        date: "वि.सं. २०८३ कार्तिक १०",
+        relativeTime: "५ घण्टा अगाडि",
+        excerpt: "अन्तर्राष्ट्रिय एकीकृत पर्वतीय विकास केन्द्र (इसिमोड) को नयाँ अध्ययन प्रतिवेदनले हिन्दुकुश-हिमालय क्षेत्रमा हिउँको मात्रा घट्दै गएको चेतावनी दिएको छ।",
+        content: `हिन्दुकुश-हिमालय क्षेत्रमा जलवायु परिवर्तनको असर तीव्र रूपमा देखिन थालेको इसिमोडको पछिल्लो अनुसन्धान प्रतिवेदनले औँल्याएको छ। अध्ययनअनुसार विगत दशकको तुलनामा हिमनदी पग्लिने गति ६५ प्रतिशतले बढेको छ।\n\nयसले तल्लो तटीय क्षेत्रका झन्डै २ अर्ब मानिसहरूको खानेपानी, सिँचाइ र जलविद्युत उत्पादनमा दीर्घकालीन चुनौती थप्न सक्ने भन्दै विश्व समुदायलाई तुरुन्त कार्बन उत्सर्जन घटाउन अपिल गरिएको छ।`
+      },
+      {
+        id: "latest-6",
+        title: "सम्पदा पुनर्निर्माण: पाटनको ऐतिहासिक सत्तल पुरानै शैलीमा तयार",
+        category: "समाज",
+        categoryClass: "society",
+        image: "https://picsum.photos/id/1050/600/400",
+        author: "कल्पना बज्राचार्य",
+        date: "वि.सं. २०८३ कार्तिक १०",
+        relativeTime: "६ घण्टा अगाडि",
+        excerpt: "ललितपुरको पाटन दरबार क्षेत्रमा अवस्थित १७औँ शताब्दीको प्राचीन काष्ठकलायुक्त सत्तलको जीर्णोद्धार परम्परागत प्रविधिबाट सम्पन्न भएको छ।",
+        content: `स्थानीय समुदाय र पुरातत्व विभागको सहकार्यमा पाटन दरबार क्षेत्रस्थित ऐतिहासिक सत्तलको पुनर्निर्माण सम्पन्न भई आज सर्वसाधारणका लागि खुला गरिएको छ।\n\nसत्तलमा मल्लकालीन कलात्मक काष्ठकला, झिँगटीको छाना र परम्परागत सुर्की-चुनको मसला प्रयोग गरिएको छ। स्थानीय बासिन्दाहरूले आफ्नो मौलिक सम्पदा पुरानै स्वरूपमा फर्किएकामा खुशी व्यक्त गरेका छन्।`
+      },
+      {
+        id: "latest-7",
+        title: "स्वास्थ्य बीमा कार्यक्रम थप प्रभावकारी बनाइने मन्त्रीको घोषणा",
+        category: "राजनीति",
+        categoryClass: "politics",
+        image: "https://picsum.photos/id/1069/600/400",
+        author: "नेपाल खबर ब्युरो",
+        date: "वि.सं. २०८३ कार्तिक १०",
+        relativeTime: "७ घण्टा अगाडि",
+        excerpt: "स्वास्थ्य मन्त्रालयले सबै जिल्लामा स्वास्थ्य बीमा दाबी भुक्तानीलाई पूर्ण डिजिटल र पारदर्शी बनाउने नयाँ नीतिगत निर्णय गरेको छ।",
+        content: `स्वास्थ्य तथा जनसंख्या मन्त्रालयले राष्ट्रिय स्वास्थ्य बीमा कार्यक्रममा देखिएका औषधि अभाव र अस्पतालका प्राविधिक ढिलासुस्ती अन्त्य गर्न तीन महिने सुधार कार्ययोजना सार्वजनिक गरेको छ।\n\nयसअन्तर्गत बिरामीले आफ्नो स्मार्टफोनबाटै फार्मेसीको औषधि मौज्दात हेर्न सक्ने र सिधै डिजिटल दाबी गर्न पाउने सुविधा सुरु गरिने भएको छ। विपन्न नागरिकहरूलाई विशेष सहुलियत दिने व्यवस्था कायमै राखिएको छ।`
+      },
+      {
+        id: "latest-8",
+        title: "नेपाली चियाको अन्तर्राष्ट्रिय बजारमा माग उच्च",
+        category: "अर्थतन्त्र",
+        categoryClass: "economy",
+        image: "https://picsum.photos/id/1075/600/400",
+        author: "तारा बराल",
+        date: "वि.सं. २०८३ कार्तिक १०",
+        relativeTime: "८ घण्टा अगाडि",
+        excerpt: "इलाम र पाँचथरका अग्र्यानिक अर्थोडक्स चियाले युरोप र अमेरिकाका विशिष्ट कफी-टी क्लबहरूमा उच्च मूल्य पाइरहेका छन्।",
+        content: `पूर्वी नेपालको उच्च पहाडी भूभागमा उत्पादित अग्र्यानिक अर्थोडक्स चियाको निर्यात यस वर्ष ३० प्रतिशतले वृद्धि भएको राष्ट्रिय चिया तथा कफी विकास बोर्डले जानकारी दिएको छ।\n\nजर्मनी, जापान र अमेरिकाका खरिदकर्ताहरूले नेपाली चियाको सुगन्ध र गुणस्तरको प्रशंसा गर्दै दीर्घकालीन सम्झौता गरेका छन्। यसबाट स्थानीय किसानहरूले प्रतिकिलो हरियो पत्तीको राम्रो मूल्य पाएका छन्।`
+      },
+
+      // Politics Category (4 items)
+      {
+        id: "pol-1",
+        title: "संसद्को बजेट अधिवेशन आजदेखि सुरु",
+        category: "राजनीति",
+        categoryClass: "politics",
+        image: "https://picsum.photos/id/1018/600/400",
+        author: "प्रकाश थापा",
+        date: "वि.सं. २०८३ कार्तिक १०",
+        relativeTime: "२ घण्टा अगाडि",
+        excerpt: "संसद्को हिउँदे अधिवेशन आजदेखि नयाँ बानेश्वरस्थित संसद् भवनमा औपचारिक रूपमा सुरु भएको छ।",
+        content: `सङ्घीय संसद्को नयाँ बजेट अधिवेशन आज दिउँसो सुरु भई विभिन्न महत्वपूर्ण विधेयकहरू पेस गरिएको छ।`
+      },
+      {
+        id: "pol-2",
+        title: "निर्वाचन प्रणाली सुधारबारे सर्वदलीय कार्यदल गठन",
+        category: "राजनीति",
+        categoryClass: "politics",
+        image: "https://picsum.photos/id/1043/600/400",
+        author: "अर्जुन खड्का",
+        date: "वि.सं. २०८३ कार्तिक १०",
+        relativeTime: "४ घण्टा अगाडि",
+        excerpt: "निर्वाचन खर्च घटाउन र विदेशमा रहेका नेपालीलाई मताधिकार दिन सर्वदलीय सुझाव कार्यदल बनेको छ।",
+        content: `संसद्मा प्रतिनिधित्व गर्ने प्रमुख राजनीतिक दलहरूबीच निर्वाचन प्रणालीलाई कम खर्चिलो र पारदर्शी बनाउने सहमति भएको छ।`
+      },
+      {
+        id: "pol-3",
+        title: "प्रदेश सरकारहरूको राजस्व बाँडफाँडसम्बन्धी बैठक",
+        category: "राजनीति",
+        categoryClass: "politics",
+        image: "https://picsum.photos/id/1048/600/400",
+        author: "सुरेश तिमिल्सिना",
+        date: "वि.सं. २०८३ कार्तिक १०",
+        relativeTime: "६ घण्टा अगाडि",
+        excerpt: "राष्ट्रिय प्राकृतिक स्रोत तथा वित्त आयोगको संयोजनमा सातवटै प्रदेशका मुख्यमन्त्रीहरूको छलफल।",
+        content: `वित्तीय संघीयतालाई सुदृढ बनाउन र स्थानीय तहको कार्यसम्पादन मूल्यांकनका आधारमा अनुदान वितरण गर्न आयोगले नयाँ मापदण्ड प्रस्तुत गरेको छ।`
+      },
+      {
+        id: "pol-4",
+        title: "सुशासन र सार्वजनिक सेवा प्रवाहमा शून्य सहनशीलता",
+        category: "राजनीति",
+        categoryClass: "politics",
+        image: "https://picsum.photos/id/1051/600/400",
+        author: "उपेन्द्र यादव",
+        date: "वि.सं. २०८३ कार्तिक १०",
+        relativeTime: "९ घण्टा अगाडि",
+        excerpt: "नागरिकका काममा हुने ढिलासुस्ती अन्त्य गर्न अनलाइन टाइम-कार्ड प्रणाली लागू गर्ने घोषणा।",
+        content: `सरकारी कार्यालयहरूमा सेवाग्राहीको फाइल २४ घण्टाभन्दा बढी रोक्न नपाइने र डिजिटल ट्र्याकिङ अनिवार्य गर्ने निर्णय भएको छ।`
+      },
+
+      // Sports Category (4 items)
+      {
+        id: "spt-1",
+        title: "नेपाली क्रिकेट टोलीले एसिया कप छनोटमा जित्यो",
+        category: "खेलकुद",
+        categoryClass: "sports",
+        image: "https://picsum.photos/id/1058/600/400",
+        author: "सन्दीप दाहाल",
+        date: "वि.सं. २०८३ कार्तिक १०",
+        relativeTime: "३ घण्टा अगाडि",
+        excerpt: "रोमाञ्चक अन्तिम ओभरमा जित हात पार्दै नेपाल आगामी एसिया कपको मुख्य चरणमा प्रवेश गरेको छ।",
+        content: `घरेलु मैदानमा भएको खेलमा नेपाली टोलीले दर्शनीय प्रदर्शन गर्दै अन्तर्राष्ट्रिय स्तरमा अर्को कोशेढुङ्गा थपेको छ।`
+      },
+      {
+        id: "spt-2",
+        title: "नेपाल प्रिमियर लिग (NPL) को नयाँ संस्करण घोषणा",
+        category: "खेलकुद",
+        categoryClass: "sports",
+        image: "https://picsum.photos/id/1068/600/400",
+        author: "अमृत भट्टराई",
+        date: "वि.सं. २०८३ कार्तिक १०",
+        relativeTime: "५ घण्टा अगाडि",
+        excerpt: "आगामी महिना हुने एनपीएलमा ६ वटा सहरका टोलीहरूले अन्तर्राष्ट्रिय खेलाडीहरूसँग प्रतिस्पर्धा गर्नेछन्।",
+        content: `नेपाल क्रिकेट संघ (क्यान) ले एनपीएलको सम्पूर्ण खेल तालिका, पुरस्कार राशि र प्रत्यक्ष प्रसारण साझेदारको नाम सार्वजनिक गरेको छ।`
+      },
+      {
+        id: "spt-3",
+        title: "साफ यू-२० च्याम्पियनसिपको तयारीमा नेपाली युवा फुटबल टोली",
+        category: "खेलकुद",
+        categoryClass: "sports",
+        image: "https://picsum.photos/id/1077/600/400",
+        author: "प्रमोद श्रेष्ठ",
+        date: "वि.सं. २०८३ कार्तिक १०",
+        relativeTime: "७ घण्टा अगाडि",
+        excerpt: "सातदोबाटोस्थित एन्फा कम्प्लेक्समा नेपाली युवा टोलीको बन्द प्रशिक्षण तीव्र गतिमा जारी छ।",
+        content: `प्रशिक्षकले टोलीको फिटनेस र ट्याक्टिकल खेलमा विशेष ध्यान दिइएको र उपाधि जित्ने मुख्य लक्ष्य रहेको बताएका छन्।`
+      },
+      {
+        id: "spt-4",
+        title: "एथलेटिक्समा नेपाली खेलाडीको नयाँ राष्ट्रिय कीर्तिमान",
+        category: "खेलकुद",
+        categoryClass: "sports",
+        image: "https://picsum.photos/id/1082/600/400",
+        author: "दिनेश अधिकारी",
+        date: "वि.सं. २०८३ कार्तिक १०",
+        relativeTime: "१० घण्टा अगाडि",
+        excerpt: "५ हजार मिटर दौडमा नेपाली धावकले विगत १२ वर्षदेखिको राष्ट्रिय कीर्तिमान भङ्ग गरेका छन्।",
+        content: `दशरथ रंगशालामा सम्पन्न ट्र्याक एन्ड फिल्ड च्याम्पियनसिपमा नयाँ समय कीर्तिमान कायम भएको हो।`
+      },
+
+      // Entertainment Category (4 items)
+      {
+        id: "ent-1",
+        title: "नयाँ चलचित्रले पहिलो हप्तामै रेकर्ड कमाइ गर्यो",
+        category: "मनोरञ्जन",
+        categoryClass: "entertainment",
+        image: "https://picsum.photos/id/1040/600/400",
+        author: "अस्मिता श्रेष्ठ",
+        date: "वि.सं. २०८३ कार्तिक १०",
+        relativeTime: "३ घण्टा अगाडि",
+        excerpt: "मौलिक कथावस्तुमा बनेको नेपाली चलचित्रले बक्स अफिसमा सर्वकालीन उच्च ओपनिङ हासिल गरेको छ।",
+        content: `हलहरूमा दर्शकहरूको अभूतपूर्व उत्साहसँगै चलचित्रले सफलताको नयाँ कीर्तिमान रचेको छ।`
+      },
+      {
+        id: "ent-2",
+        title: "काठमाडौं अन्तर्राष्ट्रिय चलचित्र महोत्सव (KIMFF) सुरु",
+        category: "मनोरञ्जन",
+        categoryClass: "entertainment",
+        image: "https://picsum.photos/id/1045/600/400",
+        author: "सोनाम लामा",
+        date: "वि.सं. २०८३ कार्तिक १०",
+        relativeTime: "५ घण्टा अगाडि",
+        excerpt: "विश्वभरका ३० देशका ६० भन्दा बढी वृत्तचित्र र पर्वतीय चलचित्रहरू प्रदर्शन गरिँदैछ।",
+        content: `किम्फमा यस वर्ष पर्वतीय जीवन, जलवायु न्याय र महिला सशक्तीकरणका विषयमा बनेका उत्कृष्ट चलचित्रहरू प्रस्तुत गरिएका छन्।`
+      },
+      {
+        id: "ent-3",
+        title: "लोकगायकको नयाँ साङ्गीतिक एल्बम युट्युबको शीर्ष ट्रेन्डिङमा",
+        category: "मनोरञ्जन",
+        categoryClass: "entertainment",
+        image: "https://picsum.photos/id/1056/600/400",
+        author: "कविता गुरुङ",
+        date: "वि.सं. २०८३ कार्तिक १०",
+        relativeTime: "८ घण्टा अगाडि",
+        excerpt: "नेपाली मौलिक भाकामा सजिएको गीत सार्वजनिक भएको २४ घण्टामै १० लाखभन्दा बढी पटक हेरियो।",
+        content: `गायक तथा संगीतकारको सुमधुर आवाज र आकर्षक भिडियो प्रस्तुतिले श्रोता तथा दर्शकको मन जितेको छ।`
+      },
+      {
+        id: "ent-4",
+        title: "रंगमञ्चमा नयाँ नाटक 'सपनाको सहर' मञ्चन सुरु",
+        category: "मनोरञ्जन",
+        categoryClass: "entertainment",
+        image: "https://picsum.photos/id/1065/600/400",
+        author: "राजेन्द्र पौडेल",
+        date: "वि.सं. २०८३ कार्तिक १०",
+        relativeTime: "११ घण्टा अगाडि",
+        excerpt: "मण्डला थिएटरमा काठमाडौं भित्रिने युवाहरूको संघर्ष र सपनालाई जीवन्त रूपमा देखाइएको छ।",
+        content: `नाटकले दर्शकलाई भावुक बनाउँदै समकालीन सामाजिक यथार्थलाई सशक्त रूपमा उजागर गरेको दर्शकहरूको प्रतिक्रिया छ।`
+      }
+    ];
+
+    // Video Section Data
+    const videoData = [
+      {
+        id: "vid-1",
+        title: "सगरमाथा आधार शिविरबाट प्रत्यक्ष: हिमनदीको पछिल्लो अवस्था",
+        duration: "०८:२४",
+        thumb: "https://picsum.photos/id/1015/600/400",
+        date: "२ घण्टा अगाडि"
+      },
+      {
+        id: "vid-2",
+        title: "क्रिकेट कप्तानसँग विशेष कुराकानी: एसिया कपको सपना र रणनीति",
+        duration: "१२:१५",
+        thumb: "https://picsum.photos/id/1058/600/400",
+        date: "४ घण्टा अगाडि"
+      },
+      {
+        id: "vid-3",
+        title: "उपत्यकाको नयाँ चक्रपथ फ्लाईओभरको थ्रीडी भिडियो नक्सा",
+        duration: "०५:४०",
+        thumb: "https://picsum.photos/id/1029/600/400",
+        date: "६ घण्टा अगाडि"
+      },
+      {
+        id: "vid-4",
+        title: "नेपालमै बनेको पहिलो इलेक्ट्रिक स्कुटरको अन-रोड टेस्ट ड्राइभ",
+        duration: "०९:१०",
+        thumb: "https://picsum.photos/id/1071/600/400",
+        date: "८ घण्टा अगाडि"
+      }
+    ];
+
+    // Opinion and Editorial Data (3 articles)
+    const opinionArticles = [
+      {
+        id: "op-1",
+        title: "नेपालको आर्थिक रूपान्तरण: अवसर र चुनौतीका बाटाहरू",
+        author: "प्रा.डा. विश्वम्भर पोखरेल",
+        role: "वरिष्ठ अर्थशास्त्री",
+        avatar: "https://picsum.photos/id/1062/150/150",
+        excerpt: "उत्पादनमुखी अर्थतन्त्र निर्माणका लागि कृषि, पर्यटन र सूचना प्रविधि तीन खम्बा हुन्। राज्यले नीतिगत स्थिरता कायम गर्नुपर्छ।",
+        content: `नेपालको वर्तमान आर्थिक अवस्थालाई नजिकबाट नियाल्दा केही उत्साहजनक र केही चुनौतीपूर्ण दृश्यहरू देखिन्छन्। विप्रेषण (रेमिट्यान्स) को भरमा मात्र टिकेको अर्थतन्त्रलाई हामीले दिगो बनाउन सक्दैनौँ।\n\nजबसम्म आन्तरिक उत्पादन वृद्धि हुँदैन, स्वदेशी रोजगारी सिर्जना हुँदैन र आयात प्रतिस्थापन गर्ने ठोस योजना बन्दैन, तबसम्म बाह्य झट्काहरूले हाम्रो अर्थतन्त्रलाई कमजोर बनाइरहनेछ। अहिलेको आवश्यकता भनेको सूचना प्रविधि निर्यात, नवीकरणीय ऊर्जाको विकास र गुणस्तरीय पर्यटन विस्तार हो।`
+      },
+      {
+        id: "op-2",
+        title: "स्थानीय तहको कार्यसम्पादन र नागरिकको अपेक्षा",
+        author: "सुनिता शर्मा",
+        role: "राजनीतिक विश्लेषक",
+        avatar: "https://picsum.photos/id/1027/150/150",
+        excerpt: "स्थानीय सरकार नागरिकको सबैभन्दा नजिकको साथी हो। पारदर्शी सेवा र सुशासनले मात्र संघीयताप्रति जनविश्वास बढाउँछ।",
+        content: `संविधानले स्थानीय तहलाई दिएको अधिकार अतुलनीय छ। गाउँ-सहरका नागरिकले सिंहदरबारको अधिकार घरदैलोमै पाएका छन् भन्नका लागि सेवा प्रवाह छिटो, छरितो र प्रविधिमैत्री हुनु अनिवार्य छ।\n\nविकास बजेटको सही सदुपयोग, नागरिक सुनुवाइको नियमित आयोजना, र भ्रष्टाचार नियन्त्रणमा जनप्रतिनिधिहरू जवाफदेही हुनुपर्छ। स्थानीय तह सफल हुँदा मात्र समग्र देश समृद्ध बन्नेछ।`
+      },
+      {
+        id: "op-3",
+        title: "जलवायु परिवर्तन र हाम्रा हिमाली समुदायको भविष्य",
+        author: "रमेश अधिकारी",
+        role: "वातावरण तथा हिमालविद्",
+        avatar: "https://picsum.photos/id/1005/150/150",
+        excerpt: "हिमाल पग्लनु भनेको केवल हिउँ सकिनु होइन, सिंगो एसियाको जलस्रोत प्रणाली संकटमा पर्नु हो। विश्व मञ्चमा आवाज बुलन्द गरौँ।",
+        content: `हाम्रा हिमालहरू आज मौन रोइरहेका छन्। कोप सम्मेलनहरूमा गरिएका बाचाहरू कार्यान्वयनमा आउन नसक्दा त्यसको प्रत्यक्ष असर हिमाली जनताको जनजीवनमा परिरहेको छ।\n\nहिमताल विस्फोटको जोखिम, अप्रत्याशित बाढी र पहिरोले स्थानीय जीविकोपार्जन उजाड बनाउँदैछ। नेपालले अब अन्तर्राष्ट्रिय मञ्चहरूमा 'क्लाइमेट फाइनान्स' (जलवायु वित्त) को न्यायोचित मागलाई अझ सशक्त रूपमा उठाउनुपर्छ।`
+      }
+    ];
+
+    // 12 Zodiac signs in Nepali Devanagari
+    const horoscopeData = [
+      {
+        sign: "मेष",
+        symbol: "♈",
+        short: "उत्साह र पराक्रम बढ्नेछ। रोकिएका अधुरा कामहरू पूरा हुने योग।",
+        full: "आजको दिन मेष राशिका लागि निकै सकारात्मक रहनेछ। कार्यक्षेत्रमा नयाँ जिम्मेवारी प्राप्त हुन सक्छ। पारिवारिक वातावरण सौहार्दपूर्ण रहनेछ भने आर्थिक लाभका नयाँ अवसर फेला पर्नेछन्। सवारी चलाउँदा भने सामान्य सतर्कता अपनाउनुहोला।",
+        color: "रातो / गुलाबी",
+        number: "३, ९",
+        strength: "ऊर्जा र आत्मविश्वास",
+        caution: "हतारमा निर्णय नगर्नुहोस्"
+      },
+      {
+        sign: "वृष",
+        symbol: "♉",
+        short: "व्यापार व्यवसायमा आम्दानी वृद्धि। मीठो भोजनको अवसर मिल्नेछ।",
+        full: "वृष राशिका जातकहरूका लागि आज धन आर्जनका राम्रा सम्भावनाहरू छन्। आफन्तजनबाट सहयोग प्राप्त हुनेछ। कला, साहित्य र मनोरञ्जनका क्षेत्रमा रुचि बढ्नेछ। भौतिक सुख-सुविधाका साधन खरिद गर्ने योजना बन्न सक्छ।",
+        color: "सेतो / क्रिम",
+        number: "२, ६",
+        strength: "स्थिरता र लगनशीलता",
+        caution: "अनावश्यक खर्चमा नियन्त्रण"
+      },
+      {
+        sign: "मिथुन",
+        symbol: "♊",
+        short: "बौद्धिक कार्यमा सफलता। साथीभाइसँग नयाँ साझेदारी सुरु हुनसक्छ।",
+        full: "तपाईंको वाकचातुर्य र बौद्धिक क्षमताको प्रशंसा हुनेछ। अध्ययन-अध्यापनमा उत्कृष्ट नतिजा हात लाग्नेछ। सञ्चार र मिडिया क्षेत्रमा आबद्ध व्यक्तिहरूलाई विशेष फाइदा पुग्नेछ। बोलीको प्रभावले अरूलाई आकर्षित गर्न सकिनेछ।",
+        color: "हरियो / पहेँलो",
+        number: "५, ७",
+        strength: "कुशल सञ्चार क्षमता",
+        caution: "दोधारे मनस्थितिबाट बच्नुहोस्"
+      },
+      {
+        sign: "कर्कट",
+        symbol: "♋",
+        short: "पारिवारिक सुख शान्ति बढ्ने। धार्मिक कार्यमा रुचि जाग्नेछ।",
+        full: "मनमा शान्ति र आनन्दको अनुभूति हुनेछ। मातापिता तथा गुरुजनको आशीर्वादले महत्वपूर्ण कार्य सम्पन्न हुनेछ। जग्गाजमिन वा घरसम्बन्धी विवाद समाधान हुने दिशामा अघि बढ्नेछ। आध्यात्मिक चिन्तनले मानसिक शान्ति दिनेछ।",
+        color: "दूधे सेतो / चाँदी",
+        number: "२, ४",
+        strength: "सहानुभूति र आत्मीयता",
+        caution: "अति भावुक नहुनुहोस्"
+      },
+      {
+        sign: "सिंह",
+        symbol: "♌",
+        short: "समाजमा मान-प्रतिष्ठा बढ्ने। प्रशासनिक क्षेत्रमा प्रगति हुनेछ।",
+        full: "नेतृत्वदायी भूमिका निर्वाह गर्ने अवसर आउनेछ। राजनीति तथा समाजसेवामा तपाईंको विचारलाई कदर गरिनेछ। शत्रुहरू परास्त हुनेछन्। नयाँ लगानीको प्रस्ताव आउन सक्छ। स्वास्थ्य राम्रो रहनेछ।",
+        color: "सुन्तला / सुनौलो",
+        number: "१, ५",
+        strength: "नेतृत्व र दृढता",
+        caution: "अहङ्कारबाट टाढा रहनुहोस्"
+      },
+      {
+        sign: "कन्या",
+        symbol: "♍",
+        short: "आर्थिक पक्ष सबल बन्नेछ। अधुरा अध्ययन वा काम अघि बढ्नेछ।",
+        full: "कन्या राशिका लागि आजको दिन हिसाबकिताब मिलाउने र योजनाबद्ध रूपमा अघि बढ्ने दिन हो। वैदेशिक क्षेत्रसँग सम्बन्धित कामहरूमा प्रगति हुनेछ। खानपानमा विशेष ध्यान पुर्याउनुहोला।",
+        color: "गाढा हरियो",
+        number: "५, ६",
+        strength: "सुक्ष्म विश्लेषण",
+        caution: "सानो कुरामा चिन्तित नहुनुहोस्"
+      },
+      {
+        sign: "तुला",
+        symbol: "♎",
+        short: "प्रेम तथा दाम्पत्य सम्बन्ध प्रगाढ। नयाँ सम्झौताको उत्तम समय।",
+        full: "साझेदारी व्यवसायमा नाफा हुनेछ। जीवनसाथीसँगको सम्बन्ध अझ सुमधुर बन्नेछ। नयाँ वस्त्र वा उपहार प्राप्ति हुनसक्छ। समाजमा तपाईंको मध्यस्थतालाई सबैले सम्मान गर्नेछन्।",
+        color: "आसमानी निलो / सेतो",
+        number: "६, ८",
+        strength: "सन्तुलन र न्यायप्रियता",
+        caution: "अरूको भरमा मात्र नपर्नुहोस्"
+      },
+      {
+        sign: "वृश्चिक",
+        symbol: "♏",
+        short: "चुनौती पन्छाउँदै लक्ष्य प्राप्ति। पराक्रम र साहस वृद्धि हुनेछ।",
+        full: "गोप्य योजनाहरू सफल हुनेछन्। अनुसन्धान तथा प्राविधिक कार्यमा सफलता मिल्नेछ। स्वास्थ्यमा केही सुधार देखिनेछ। प्रतियोगितात्मक परीक्षा वा खेलकुदमा विजय हासिल गर्न सकिनेछ।",
+        color: "गाढा रातो / महरुम",
+        number: "९, १",
+        strength: "साहस र अनुसन्धान",
+        caution: "क्रोधलाई नियन्त्रणमा राख्नुहोस्"
+      },
+      {
+        sign: "धनु",
+        symbol: "♐",
+        short: "भाग्यले साथ दिनेछ। लामो यात्रा वा तीर्थाटनको सम्भावना।",
+        full: "धार्मिक तथा सामाजिक कार्यमा सक्रिय भइनेछ। गुरुजनको मार्गदर्शन लाभदायक साबित हुनेछ। उच्च शिक्षा आर्जन गरिरहेका विद्यार्थीहरूका लागि आजको दिन विशेष उपलब्धिमूलक रहनेछ।",
+        color: "पहेँलो / सुनौलो",
+        number: "३, १२",
+        strength: "आशावादिता र ज्ञान",
+        caution: "अति महत्त्वाकांक्षाबाट बच्नुहोस्"
+      },
+      {
+        sign: "मकर",
+        symbol: "♑",
+        short: "कडा मिहिनेतको फल मिल्ने। दीर्घकालीन योजना सुरु गर्ने बेला।",
+        full: "कर्मक्षेत्रमा धैर्यताको फल प्राप्त हुनेछ। वरिष्ठ अधिकारीहरूसँगको सम्बन्ध राम्रो रहनेछ। पैतृक सम्पत्तिको संरक्षणमा सफलता मिल्नेछ। कामको चाप बढी भए पनि अन्त्यमा सन्तोषजनक नतिजा प्राप्त हुनेछ।",
+        color: "निलो / कालो",
+        number: "८, १०",
+        strength: "धैर्य र अनुशासन",
+        caution: "अति कार्यबोझ नलिनुहोस्"
+      },
+      {
+        sign: "कुम्भ",
+        symbol: "♒",
+        short: "नयाँ मित्रहरू फेला पर्ने। सामाजिक सञ्जालमा लोकप्रियता बढ्ने।",
+        full: "नयाँ विचार र सिर्जनशीलता प्रकट गर्ने दिन हो। सामूहिक कार्यहरूमा सफलता हात पर्नेछ। प्रविधि र नवप्रवर्तनका क्षेत्रमा काम गर्नेहरूलाई लाभ मिल्नेछ। रोकिएको धन फिर्ता आउन सक्छ।",
+        color: "आकासे निलो",
+        number: "७, ११",
+        strength: "सिर्जनात्मक सोच",
+        caution: "नियमहरूको पालना गर्नुहोस्"
+      },
+      {
+        sign: "मीन",
+        symbol: "♓",
+        short: "दान-पुण्यमा मन जानेछ। आध्यात्मिक शान्ति र आत्मसन्तुष्टि मिल्ने।",
+        full: "परोपकारी कार्यमा समय व्यतीत हुनेछ। कला, संगीत र साहित्यमा रुचि जाग्नेछ। नजिकका आफन्तहरूसँग भेटघाट भई रमाइलो कुराकानी हुनेछ। स्वास्थ्य सामान्य रहनेछ, जलको सेवन बढाउनुहोला।",
+        color: "हल्का पहेँलो / सुन्तला",
+        number: "३, ९",
+        strength: "दया र अन्तर्दृष्टि",
+        caution: "काल्पनिक संसारमा मात्र नहराउनुहोस्"
+      }
+    ];
+
+    // Dummy Weather Data
+    const weatherData = [
+      { city: "काठमाडौं", temp: "२२°C", condition: "आंशिक बदली", humidity: "६२%", wind: "८ किमी/घण्टा", icon: "⛅" },
+      { city: "पोखरा", temp: "२५°C", condition: "सफा घाम लागेको", humidity: "५५%", wind: "१० किमी/घण्टा", icon: "☀️" },
+      { city: "विराटनगर", temp: "२९°C", condition: "सामान्य हावाहुरी", humidity: "७०%", wind: "१४ किमी/घण्टा", icon: "🌤️" }
+    ];
+
+    // Dummy Bullion Rates
+    const bullionRates = [
+      { item: "छापावाल सुन", unit: "१ तोला", price: "१,६२,५००" },
+      { item: "तेजाबी सुन", unit: "१ तोला", price: "१,६१,८००" },
+      { item: "चाँदी", unit: "१ तोला", price: "१,९५०" }
+    ];
+
+    // Dummy Forex Rates
+    const forexRates = [
+      { currency: "अमेरिकी डलर (USD)", unit: "$ १", buy: "१३४.२०", sell: "१३४.८०" },
+      { currency: "भारतीय रुपैयाँ (INR)", unit: "₹ १००", buy: "१६०.००", sell: "१६०.१५" },
+      { currency: "युरो (EUR)", unit: "€ १", buy: "१४५.१०", sell: "१४५.७५" },
+      { currency: "ब्रिटिश पाउन्ड (GBP)", unit: "£ १", buy: "१७२.३०", sell: "१७३.१०" }
+    ];
+
+    // ==========================================
+    // 2. STATE MANAGEMENT (In-memory ONLY)
+    // ==========================================
+    // Strictly NO localStorage or sessionStorage as instructed
+    let isDarkMode = false;
+    let currentCategoryFilter = "all";
+    let currentHeroSlide = 0;
+    let heroSliderTimer = null;
+
+    // ==========================================
+    // 3. UI RENDERING FUNCTIONS
+    // ==========================================
+
+    // Render Breaking Ticker
+    function renderBreakingTicker() {
+      const marquee = document.getElementById("breaking-ticker-marquee");
+      // Double the items for seamless CSS marquee
+      const items = [...breakingHeadlines, ...breakingHeadlines];
+      marquee.innerHTML = items.map((text, idx) => `
+        <span class="ticker-item" onclick="openHeadlineModal('${text.replace(/'/g, "\\'")}')">
+          <span class="ticker-bullet">✦</span>
+          <span>${text}</span>
+        </span>
+      `).join("");
+    }
+
+    // Render Hero Slider (3 slides)
+    function renderHeroSlider() {
+      const container = document.getElementById("slider-container");
+      const dotsBox = document.getElementById("slider-dots");
+      const heroSlides = allNewsArticles.slice(0, 3);
+
+      container.innerHTML = heroSlides.map((article, idx) => `
+        <div class="slide ${idx === 0 ? 'active' : ''}" data-index="${idx}" onclick="openArticleModal('${article.id}')">
+          <img class="slide-img" src="${article.image}" alt="${article.title}" onerror="this.src='${getFallbackImage(article.title, article.category)}'">
+          <div class="slide-gradient">
+            <span class="cat-badge ${article.categoryClass}">${article.category}</span>
+            <h2 class="slide-title">${article.title}</h2>
+            <p class="slide-desc">${article.excerpt}</p>
+            <div style="display:flex; gap:1rem; align-items:center; font-size:0.875rem; color:#cbd5e1;">
+              <span>✍ ${article.author}</span>
+              <span>•</span>
+              <span>⏱ ${article.relativeTime}</span>
+            </div>
+          </div>
+        </div>
+      `).join("");
+
+      dotsBox.innerHTML = heroSlides.map((_, idx) => `
+        <button class="slider-dot ${idx === 0 ? 'active' : ''}" data-dot="${idx}" aria-label="स्लाइड ${idx + 1}" onclick="goToHeroSlide(${idx})"></button>
+      `).join("");
+
+      startHeroAutoPlay();
+    }
+
+    function goToHeroSlide(idx) {
+      const slides = document.querySelectorAll(".slide");
+      const dots = document.querySelectorAll(".slider-dot");
+      if (!slides.length) return;
+
+      currentHeroSlide = (idx + slides.length) % slides.length;
+      slides.forEach((s, i) => s.classList.toggle("active", i === currentHeroSlide));
+      dots.forEach((d, i) => d.classList.toggle("active", i === currentHeroSlide));
+    }
+
+    function startHeroAutoPlay() {
+      stopHeroAutoPlay();
+      heroSliderTimer = setInterval(() => {
+        goToHeroSlide(currentHeroSlide + 1);
+      }, 5000);
+    }
+
+    function stopHeroAutoPlay() {
+      if (heroSliderTimer) clearInterval(heroSliderTimer);
+    }
+
+    // Render Hero Side Stack (3 items)
+    function renderHeroSideStack() {
+      const stack = document.getElementById("hero-side-stack");
+      const sideArticles = allNewsArticles.slice(3, 6);
+      stack.innerHTML = sideArticles.map(article => `
+        <article class="hero-side-card" onclick="openArticleModal('${article.id}')">
+          <img class="hero-side-thumb" src="${article.image}" alt="${article.title}" onerror="this.src='${getFallbackImage(article.title, article.category)}'">
+          <div class="hero-side-content">
+            <span class="cat-badge ${article.categoryClass}" style="font-size:0.7rem; padding:0.15rem 0.4rem;">${article.category}</span>
+            <h3 class="hero-side-title">${article.title}</h3>
+            <span class="time-badge" style="font-size:0.75rem;">${article.relativeTime}</span>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    // Render Latest News (8 cards)
+    function renderLatestNews(filterCategory = "all") {
+      const grid = document.getElementById("latest-news-grid");
+      let articles = allNewsArticles.slice(6, 14); // default 8 latest cards
+
+      if (filterCategory !== "all") {
+        articles = allNewsArticles.filter(a => a.category === filterCategory);
+      }
+
+      if (articles.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column: 1 / -1; padding: 3rem 1rem; text-align: center; background: var(--bg-surface); border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📰</div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">यस विधामा थप समाचार उपलब्ध छैन</h3>
+            <p style="color: var(--text-muted); font-size: 0.9375rem;">कृपया अन्य विधा छान्नुहोस् वा मुख्य पृष्ठमा फर्कनुहोस्।</p>
+            <button class="reset-filter-btn" style="margin: 1rem auto 0;" onclick="resetToHome()">मुख्य पृष्ठ हेर्नुहोस्</button>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = articles.map(article => `
+        <article class="news-card" onclick="openArticleModal('${article.id}')">
+          <div class="card-img-wrap">
+            <img src="${article.image}" alt="${article.title}" loading="lazy" onerror="this.src='${getFallbackImage(article.title, article.category)}'">
+          </div>
+          <div class="card-body">
+            <span class="cat-badge ${article.categoryClass}">${article.category}</span>
+            <h3 class="card-title">${article.title}</h3>
+            <p class="card-desc">${article.excerpt}</p>
+            <div class="card-meta">
+              <span class="time-badge">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                ${article.relativeTime}
+              </span>
+              <span style="font-size:0.75rem; color:var(--primary-blue); font-weight:700;">विस्तृत पढ्नुहोस् ❯</span>
+            </div>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    // Render Sidebar Most Read (१–५)
+    function renderMostRead() {
+      const list = document.getElementById("popular-news-list");
+      const nepaliDigits = ["१", "२", "३", "४", "५"];
+      const popularArticles = [
+        allNewsArticles[0],
+        allNewsArticles[6],
+        allNewsArticles[1],
+        allNewsArticles[3],
+        allNewsArticles[4]
+      ];
+
+      list.innerHTML = popularArticles.map((article, idx) => `
+        <li class="popular-item" onclick="openArticleModal('${article.id}')">
+          <span class="popular-num">${nepaliDigits[idx]}</span>
+          <div class="popular-text">
+            <h4 class="popular-title">${article.title}</h4>
+            <span class="time-badge" style="font-size:0.75rem;">${article.relativeTime} • ${article.category}</span>
+          </div>
+        </li>
+      `).join("");
+    }
+
+    // Render Weather Widget
+    function renderWeather() {
+      const grid = document.getElementById("weather-grid");
+      grid.innerHTML = weatherData.map(w => `
+        <div class="weather-card">
+          <div class="city-info">
+            <h4>${w.city}</h4>
+            <span>${w.condition} (आर्द्रता: ${w.humidity})</span>
+          </div>
+          <div class="temp-info">
+            <div class="temp-degree">${w.icon} ${w.temp}</div>
+            <span style="font-size:0.75rem; color:var(--text-muted);">हावा: ${w.wind}</span>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    // Render Bullion Rates
+    function renderBullion() {
+      const tbody = document.getElementById("bullion-rates-body");
+      tbody.innerHTML = bullionRates.map(b => `
+        <tr>
+          <td><strong>${b.item}</strong></td>
+          <td>${b.unit}</td>
+          <td class="num">${b.price}</td>
+        </tr>
+      `).join("");
+    }
+
+    // Render Forex Rates
+    function renderForex() {
+      const tbody = document.getElementById("forex-rates-body");
+      tbody.innerHTML = forexRates.map(f => `
+        <tr>
+          <td><strong>${f.currency}</strong></td>
+          <td>${f.unit}</td>
+          <td class="num">${f.buy}</td>
+          <td class="num">${f.sell}</td>
+        </tr>
+      `).join("");
+    }
+
+    // Render Category Sections (Politics, Sports, Entertainment) - 4 articles each
+    function renderCategorySections() {
+      const polGrid = document.getElementById("politics-grid");
+      const sptGrid = document.getElementById("sports-grid");
+      const entGrid = document.getElementById("entertainment-grid");
+
+      const polArticles = allNewsArticles.filter(a => a.id.startsWith("pol-"));
+      const sptArticles = allNewsArticles.filter(a => a.id.startsWith("spt-"));
+      const entArticles = allNewsArticles.filter(a => a.id.startsWith("ent-"));
+
+      const createCardHtml = (article) => `
+        <article class="news-card" onclick="openArticleModal('${article.id}')">
+          <div class="card-img-wrap">
+            <img src="${article.image}" alt="${article.title}" loading="lazy" onerror="this.src='${getFallbackImage(article.title, article.category)}'">
+          </div>
+          <div class="card-body">
+            <span class="cat-badge ${article.categoryClass}">${article.category}</span>
+            <h3 class="card-title">${article.title}</h3>
+            <p class="card-desc">${article.excerpt}</p>
+            <div class="card-meta">
+              <span class="time-badge">${article.relativeTime}</span>
+              <span style="font-size:0.75rem; color:var(--primary-red); font-weight:700;">पढ्नुहोस् ❯</span>
+            </div>
+          </div>
+        </article>
+      `;
+
+      polGrid.innerHTML = polArticles.map(createCardHtml).join("");
+      sptGrid.innerHTML = sptArticles.map(createCardHtml).join("");
+      entGrid.innerHTML = entArticles.map(createCardHtml).join("");
+    }
+
+    // Render Video Section (4 cards)
+    function renderVideos() {
+      const grid = document.getElementById("video-grid");
+      grid.innerHTML = videoData.map(v => `
+        <div class="video-card" onclick="openVideoModal('${v.id}')">
+          <div class="video-thumb-wrap">
+            <img src="${v.thumb}" alt="${v.title}" loading="lazy" onerror="this.src='${getFallbackImage(v.title, 'भिडियो')}'">
+            <div class="play-overlay">
+              <div class="play-btn-circle">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+            </div>
+            <span class="video-duration">${v.duration}</span>
+          </div>
+          <div class="video-card-body">
+            <h4 class="video-title">${v.title}</h4>
+            <span style="font-size:0.75rem; color:#94a3b8; display:block; margin-top:0.4rem;">${v.date}</span>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    // Render Opinion Section (3 articles)
+    function renderOpinions() {
+      const grid = document.getElementById("opinion-grid");
+      grid.innerHTML = opinionArticles.map(op => `
+        <article class="opinion-card" onclick="openOpinionModal('${op.id}')">
+          <div class="opinion-author-row">
+            <img class="author-avatar" src="${op.avatar}" alt="${op.author}" onerror="this.src='https://picsum.photos/id/1025/150/150'">
+            <div class="author-meta">
+              <h4>${op.author}</h4>
+              <span>${op.role}</span>
+            </div>
+          </div>
+          <h3 class="opinion-title">${op.title}</h3>
+          <p class="opinion-excerpt">${op.excerpt}</p>
+          <div style="margin-top:auto; font-size:0.8125rem; font-weight:700; color:var(--primary-red); display:flex; align-items:center; gap:0.25rem;">
+            पूर्ण विचार पढ्नुहोस् ❯
+          </div>
+        </article>
+      `).join("");
+    }
+
+    // Render 12 Zodiac Horoscope Cards
+    function renderHoroscope() {
+      const grid = document.getElementById("zodiac-grid");
+      grid.innerHTML = horoscopeData.map((z, idx) => `
+        <div class="zodiac-card" onclick="openHoroscopeModal(${idx})">
+          <div class="zodiac-symbol">${z.symbol}</div>
+          <div class="zodiac-name">${z.sign}</div>
+          <div class="zodiac-short">${z.short}</div>
+        </div>
+      `).join("");
+    }
+
+    // ==========================================
+    // 4. USER INTERACTIONS & MODAL CONTROLLERS
+    // ==========================================
+
+    // Open News Article Modal
+    function openArticleModal(articleId) {
+      const article = allNewsArticles.find(a => a.id === articleId);
+      if (!article) return;
+
+      const modal = document.getElementById("article-modal");
+      const img = document.getElementById("modal-image");
+      const cat = document.getElementById("modal-category");
+      const headline = document.getElementById("modal-headline");
+      const date = document.getElementById("modal-date");
+      const author = document.getElementById("modal-author");
+      const textContainer = document.getElementById("modal-text");
+      const copyFeedback = document.getElementById("copy-feedback");
+      if (copyFeedback) copyFeedback.style.display = "none";
+
+      img.src = article.image;
+      img.onerror = () => { img.src = getFallbackImage(article.title, article.category); };
+      cat.textContent = article.category;
+      cat.className = `cat-badge ${article.categoryClass || 'politics'}`;
+      headline.textContent = article.title;
+      date.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> ${article.date} (${article.relativeTime})`;
+      author.textContent = `✍ संवाददाता: ${article.author}`;
+
+      // Format full article with lead and paragraphs
+      const paragraphs = article.content.split('\n\n');
+      textContainer.innerHTML = paragraphs.map((p, i) => {
+        if (i === 0) return `<p class="lead">${p}</p>`;
+        if (i === 2) return `<blockquote>"${p}"</blockquote>`;
+        return `<p>${p}</p>`;
+      }).join("");
+
+      modal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    // Open Headline Modal from ticker
+    function openHeadlineModal(headlineText) {
+      const article = allNewsArticles.find(a => a.title.includes(headlineText.slice(0, 15))) || allNewsArticles[0];
+      openArticleModal(article.id);
+    }
+
+    function closeArticleModal() {
+      const modal = document.getElementById("article-modal");
+      modal.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    // Open Opinion Modal
+    function openOpinionModal(opinionId) {
+      const op = opinionArticles.find(o => o.id === opinionId);
+      if (!op) return;
+
+      const modal = document.getElementById("article-modal");
+      const img = document.getElementById("modal-image");
+      const cat = document.getElementById("modal-category");
+      const headline = document.getElementById("modal-headline");
+      const date = document.getElementById("modal-date");
+      const author = document.getElementById("modal-author");
+      const textContainer = document.getElementById("modal-text");
+
+      img.src = "https://picsum.photos/id/1018/1200/500";
+      cat.textContent = "दृष्टिकोण / विचार";
+      cat.className = "cat-badge opinion";
+      headline.textContent = op.title;
+      date.textContent = "आज प्रकाशित";
+      author.textContent = `लेखक: ${op.author} (${op.role})`;
+
+      const paragraphs = op.content.split('\n\n');
+      textContainer.innerHTML = `
+        <p class="lead">${op.excerpt}</p>
+        ${paragraphs.map(p => `<p>${p}</p>`).join("")}
+      `;
+
+      modal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    // Open Video Demo Modal
+    function openVideoModal(videoId) {
+      const v = videoData.find(item => item.id === videoId);
+      if (!v) return;
+
+      const modal = document.getElementById("article-modal");
+      const img = document.getElementById("modal-image");
+      const cat = document.getElementById("modal-category");
+      const headline = document.getElementById("modal-headline");
+      const date = document.getElementById("modal-date");
+      const author = document.getElementById("modal-author");
+      const textContainer = document.getElementById("modal-text");
+
+      img.src = v.thumb;
+      cat.textContent = "भिडियो रिपोर्ट";
+      cat.className = "cat-badge tech";
+      headline.textContent = v.title;
+      date.textContent = v.date;
+      author.textContent = "नेपाल खबर मल्टिमिडिया शाखा";
+
+      textContainer.innerHTML = `
+        <div style="background:#000; border-radius:var(--radius-md); overflow:hidden; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; color:#fff; position:relative;">
+          <img src="${v.thumb}" style="width:100%; height:100%; object-fit:cover; opacity:0.5;">
+          <div style="position:absolute; text-align:center;">
+            <div class="play-btn-circle" style="margin:0 auto 1rem; width:64px; height:64px;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </div>
+            <p style="font-weight:700; font-size:1.1rem;">भिडियो स्ट्रिमिङ डेमो (अवधि: ${v.duration})</p>
+            <p style="font-size:0.85rem; color:#cbd5e1;">यो नमुना भिडियो प्लेयर हो।</p>
+          </div>
+        </div>
+        <p class="lead" style="margin-top:1.5rem;">${v.title} सम्बन्धी स्थलगत विशेष भिडियो सामग्री। नेपाल खबरको मल्टिमिडिया डेस्कबाट प्रत्यक्ष छायांकन गरिएको हो।</p>
+      `;
+
+      modal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    // Open Horoscope Modal
+    function openHoroscopeModal(index) {
+      const z = horoscopeData[index];
+      if (!z) return;
+
+      document.getElementById("modal-zodiac-icon").textContent = z.symbol;
+      document.getElementById("modal-zodiac-title").textContent = `${z.sign} राशि`;
+      document.getElementById("modal-zodiac-body").textContent = z.full;
+      document.getElementById("modal-zodiac-color").textContent = z.color;
+      document.getElementById("modal-zodiac-number").textContent = z.number;
+      document.getElementById("modal-zodiac-strength").textContent = z.strength;
+      document.getElementById("modal-zodiac-caution").textContent = z.caution;
+
+      document.getElementById("horoscope-modal").classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeHoroscopeModal() {
+      document.getElementById("horoscope-modal").classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    // Open Info Modals (Privacy, Terms, etc.)
+    function openPrivacyModal() {
+      showInfoModal(
+        "गोपनीयता नीति (Privacy Policy)",
+        `<p><strong>नेपाल खबर</strong> आफ्ना पाठकहरूको गोपनीयताको पूर्ण सम्मान गर्दछ। हाम्रो पोर्टलले पाठकहरूको व्यक्तिगत विवरण (नाम वा व्यक्तिगत पहिचान) कुनै पनि बाह्य पक्षसँग बिक्री वा साझेदारी गर्दैन।</p>
+         <p>यस वेबसाइटमा प्रस्तुत गरिएका सम्पूर्ण समाचार, सामग्री र तथ्याङ्कहरू केवल परीक्षण तथा प्रदर्शनी उद्देश्यका लागि तयार पारिएका हुन्।</p>
+         <p>कुनै पनि प्रश्न वा जिज्ञासा भएमा हाम्रो सम्पादकीय ठेगाना news@nepalkhabar.demo मा सम्पर्क गर्न सक्नुहुनेछ।`
+      );
+    }
+
+    function openTermsModal() {
+      showInfoModal(
+        "प्रयोगका सर्तहरू (Terms of Use)",
+        `<p>नेपाल खबर पोर्टलमा स्वागत छ। यस वेबसाइटमा उपलब्ध सामग्रीहरू व्यक्तिगत अध्ययन तथा जानकारीका लागि मात्र प्रयोग गर्न पाइनेछ।</p>
+         <p>हाम्रो अनुमतिबिना सामग्रीको व्यावसायिक पुनर्प्रकाशन गर्न निषेध गरिएको छ। निष्पक्ष पत्रकारिताका विश्वव्यापी मूल्य-मान्यताहरू पालना गर्न हामी प्रतिबद्ध छौँ।</p>`
+      );
+    }
+
+    function openEditorialCodeModal() {
+      showInfoModal(
+        "पत्रकारिता आचारसंहिता",
+        `<p>हामी नेपाल प्रेस काउन्सिलद्वारा जारी गरिएको पत्रकार आचारसंहिताप्रति पूर्ण प्रतिबद्ध छौँ। सत्य, तथ्य र निष्पक्ष सूचना सम्प्रेषण नै हाम्रो मूल मन्त्र हो।</p>
+         <p>कुनै पनि समाचारमा तथ्यगत त्रुटि देखिएमा हामी तत्काल सच्याएर पाठकसमक्ष पारदर्शी जानकारी गराउँछौँ।</p>`
+      );
+    }
+
+    function openAdModal() {
+      showInfoModal(
+        "विज्ञापनका लागि सम्पर्क",
+        `<p>नेपाल खबरमा तपाईंको व्यवसाय, उत्पादन वा सेवाको प्रभावकारी प्रचारप्रसार गर्नका लागि हाम्रो मार्केटिङ टोलीलाई सम्पर्क गर्नुहोस्:</p>
+         <p><strong>फोन:</strong> +९७७-१-४७८००००<br><strong>इमेल:</strong> ads@nepalkhabar.demo<br><strong>ठेगाना:</strong> अनामनगर, काठमाडौं</p>`
+      );
+    }
+
+    function showInfoModal(title, htmlContent) {
+      document.getElementById("info-modal-title").textContent = title;
+      document.getElementById("info-modal-content").innerHTML = htmlContent;
+      document.getElementById("info-modal").classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeInfoModal() {
+      document.getElementById("info-modal").classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    // Category Filtering
+    function filterByCategory(category) {
+      currentCategoryFilter = category;
+
+      // Update Nav active classes
+      document.querySelectorAll(".nav-link").forEach(link => {
+        link.classList.toggle("active", link.getAttribute("data-category") === category);
+      });
+      document.querySelectorAll(".drawer-nav-link").forEach(link => {
+        link.classList.toggle("active", link.getAttribute("data-category") === category);
+      });
+
+      const banner = document.getElementById("category-filter-banner");
+      const titleSpan = document.getElementById("current-filter-title");
+      const heroSection = document.getElementById("hero-section");
+      const catSections = document.getElementById("category-sections-wrapper");
+      const videoSection = document.getElementById("video-section");
+      const opinionSection = document.getElementById("opinion-section");
+      const horoscopeSection = document.getElementById("horoscope-section");
+
+      if (category === "all") {
+        banner.classList.remove("active");
+        heroSection.style.display = "block";
+        catSections.style.display = "block";
+        videoSection.style.display = "block";
+        opinionSection.style.display = "block";
+        horoscopeSection.style.display = "block";
+        renderLatestNews("all");
+      } else {
+        banner.classList.add("active");
+        titleSpan.innerHTML = `<span style="color:var(--primary-red);">●</span> ${category}`;
+        // Hide general homepage sections to focus on filtered news
+        heroSection.style.display = "none";
+        catSections.style.display = "none";
+        videoSection.style.display = "none";
+        opinionSection.style.display = "none";
+        horoscopeSection.style.display = "none";
+        renderLatestNews(category);
+      }
+
+      // Smooth scroll to latest news area
+      const latestSec = document.getElementById("latest-section");
+      if (latestSec) {
+        latestSec.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      // Close mobile drawer if open
+      closeMobileDrawer();
+    }
+
+    function resetToHome() {
+      filterByCategory("all");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Live Search
+    function setupLiveSearch() {
+      const triggerBtn = document.getElementById("search-toggle-btn");
+      const panel = document.getElementById("search-panel");
+      const input = document.getElementById("live-search-input");
+      const closeBtn = document.getElementById("search-close-btn");
+      const resultsBox = document.getElementById("search-results-box");
+      const resultsList = document.getElementById("search-results-list");
+
+      triggerBtn.addEventListener("click", () => {
+        panel.classList.toggle("active");
+        if (panel.classList.contains("active")) {
+          setTimeout(() => input.focus(), 100);
+        }
+      });
+
+      closeBtn.addEventListener("click", () => {
+        panel.classList.remove("active");
+        input.value = "";
+        resultsBox.style.display = "none";
+      });
+
+      input.addEventListener("input", (e) => {
+        const query = e.target.value.trim().toLowerCase();
+        if (!query) {
+          resultsBox.style.display = "none";
+          resultsList.innerHTML = "";
+          return;
+        }
+
+        const matches = allNewsArticles.filter(a => 
+          a.title.toLowerCase().includes(query) || 
+          a.excerpt.toLowerCase().includes(query) ||
+          a.category.toLowerCase().includes(query)
+        );
+
+        resultsBox.style.display = "block";
+
+        if (matches.length === 0) {
+          resultsList.innerHTML = `
+            <div style="padding:1.5rem; text-align:center; color:var(--text-muted);">
+              <p style="font-size:1rem; font-weight:600;">माफ गर्नुहोस्, तपाईंले खोज्नुभएको <em>"${e.target.value}"</em> सँग मिल्दो कुनै समाचार भेटिएन।</p>
+              <span style="font-size:0.8125rem;">कृपया अन्य शब्दहरू वा शीर्षक प्रयोग गरी पुनः खोज्नुहोस्।</span>
+            </div>
+          `;
+        } else {
+          resultsList.innerHTML = matches.map(m => `
+            <div class="search-result-item" onclick="openArticleModal('${m.id}'); document.getElementById('search-panel').classList.remove('active');">
+              <img class="search-result-thumb" src="${m.image}" alt="${m.title}" onerror="this.src='${getFallbackImage(m.title, m.category)}'">
+              <div>
+                <span class="cat-badge ${m.categoryClass}" style="font-size:0.65rem; padding:0.1rem 0.35rem;">${m.category}</span>
+                <div class="search-result-title">${m.title}</div>
+                <span style="font-size:0.75rem; color:var(--text-muted);">${m.relativeTime}</span>
+              </div>
+            </div>
+          `).join("");
+        }
+      });
+    }
+
+    // Dark Mode Toggle - Handled in JS state only, NO localStorage / sessionStorage
+    function toggleDarkMode() {
+      isDarkMode = !isDarkMode;
+      document.body.classList.toggle("dark-mode", isDarkMode);
+
+      const themeText = document.getElementById("theme-text");
+      const themeIcon = document.getElementById("theme-icon");
+
+      if (isDarkMode) {
+        themeText.textContent = "लाइट मोड";
+        themeIcon.innerHTML = `<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>`;
+      } else {
+        themeText.textContent = "डार्क मोड";
+        themeIcon.innerHTML = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>`;
+      }
+    }
+
+    // Newsletter Submission with Client-side validation
+    function setupNewsletter() {
+      const form = document.getElementById("newsletter-form");
+      const input = document.getElementById("newsletter-email");
+      const msg = document.getElementById("newsletter-message");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = input.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!email || !emailRegex.test(email)) {
+          msg.textContent = "कृपया मान्य इमेल ठेगाना प्रविष्ट गर्नुहोस्।";
+          msg.className = "newsletter-message error";
+          input.focus();
+          return;
+        }
+
+        // Valid submission
+        msg.textContent = "धन्यवाद, तपाईंको सदस्यता सफल भयो।";
+        msg.className = "newsletter-message success";
+        input.value = "";
+        input.disabled = true;
+        form.querySelector("button").disabled = true;
+        form.querySelector("button").textContent = "सफल भयो ✓";
+      });
+    }
+
+    // Mobile Drawer Setup
+    function setupMobileDrawer() {
+      const menuBtn = document.getElementById("mobile-menu-btn");
+      const drawer = document.getElementById("mobile-drawer");
+      const backdrop = document.getElementById("drawer-backdrop");
+      const closeBtn = document.getElementById("drawer-close-btn");
+      const drawerNavList = document.getElementById("drawer-nav-list");
+
+      const navItems = [
+        { name: "मुख्य पृष्ठ", cat: "all" },
+        { name: "राजनीति", cat: "राजनीति" },
+        { name: "अर्थतन्त्र", cat: "अर्थतन्त्र" },
+        { name: "समाज", cat: "समाज" },
+        { name: "खेलकुद", cat: "खेलकुद" },
+        { name: "मनोरञ्जन", cat: "मनोरञ्जन" },
+        { name: "प्रविधि", cat: "प्रविधि" },
+        { name: "विश्व", cat: "विश्व" },
+        { name: "विचार", cat: "विचार" }
+      ];
+
+      drawerNavList.innerHTML = navItems.map((item, idx) => `
+        <li>
+          <a class="drawer-nav-link ${idx === 0 ? 'active' : ''}" data-category="${item.cat}" href="javascript:void(0)" onclick="filterByCategory('${item.cat}')">
+            ${item.name}
+          </a>
+        </li>
+      `).join("");
+
+      menuBtn.addEventListener("click", () => {
+        drawer.classList.add("open");
+        backdrop.classList.add("open");
+        document.body.style.overflow = "hidden";
+      });
+
+      closeBtn.addEventListener("click", closeMobileDrawer);
+      backdrop.addEventListener("click", closeMobileDrawer);
+    }
+
+    function closeMobileDrawer() {
+      document.getElementById("mobile-drawer").classList.remove("open");
+      document.getElementById("drawer-backdrop").classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    // Back to Top logic
+    function setupBackToTop() {
+      const btn = document.getElementById("back-to-top");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          btn.classList.add("visible");
+        } else {
+          btn.classList.remove("visible");
+        }
+      });
+
+      btn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+
+    // Social Sharing helpers
+    function shareArticle(platform) {
+      const currentUrl = window.location.href;
+      if (platform === 'facebook') {
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`, '_blank', 'width=600,height=400');
+      } else if (platform === 'twitter') {
+        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent('नेपाल खबर समाचार')}&url=${encodeURIComponent(currentUrl)}`, '_blank', 'width=600,height=400');
+      }
+    }
+
+    function copyArticleLink() {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+          const feedback = document.getElementById("copy-feedback");
+          if (feedback) {
+            feedback.style.display = "inline";
+            setTimeout(() => { feedback.style.display = "none"; }, 2500);
+          }
+        });
+      }
+    }
+
+    // IntersectionObserver for lightweight scroll animations
+    function setupScrollAnimations() {
+      const sections = document.querySelectorAll(".fade-in-section");
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        sections.forEach(sec => observer.observe(sec));
+      } else {
+        // Fallback
+        sections.forEach(sec => sec.classList.add("is-visible"));
+      }
+    }
+
+    // ==========================================
+    // 5. INITIALIZATION
+    // ==========================================
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. Render all parts
+      renderBreakingTicker();
+      renderHeroSlider();
+      renderHeroSideStack();
+      renderLatestNews();
+      renderMostRead();
+      renderWeather();
+      renderBullion();
+      renderForex();
+      renderCategorySections();
+      renderVideos();
+      renderOpinions();
+      renderHoroscope();
+
+      // 2. Setup interactive features
+      setupLiveSearch();
+      setupNewsletter();
+      setupMobileDrawer();
+      setupBackToTop();
+      setupScrollAnimations();
+
+      // 3. Bind Navigation Click Listeners
+      document.querySelectorAll(".nav-link").forEach(link => {
+        link.addEventListener("click", (e) => {
+          const cat = e.currentTarget.getAttribute("data-category");
+          filterByCategory(cat);
+        });
+      });
+
+      // 4. Hero Slider Controls
+      document.getElementById("slider-prev-btn").addEventListener("click", () => {
+        stopHeroAutoPlay();
+        goToHeroSlide(currentHeroSlide - 1);
+        startHeroAutoPlay();
+      });
+
+      document.getElementById("slider-next-btn").addEventListener("click", () => {
+        stopHeroAutoPlay();
+        goToHeroSlide(currentHeroSlide + 1);
+        startHeroAutoPlay();
+      });
+
+      const sliderWrap = document.getElementById("hero-slider-wrap");
+      sliderWrap.addEventListener("mouseenter", stopHeroAutoPlay);
+      sliderWrap.addEventListener("mouseleave", startHeroAutoPlay);
+
+      // 5. Theme Toggle Button
+      document.getElementById("theme-toggle-btn").addEventListener("click", toggleDarkMode);
+
+      // 6. Modal Backdrop Clicks and ESC key listener
+      const modals = [
+        document.getElementById("article-modal"),
+        document.getElementById("horoscope-modal"),
+        document.getElementById("info-modal")
+      ];
+
+      modals.forEach(m => {
+        if (!m) return;
+        m.addEventListener("click", (e) => {
+          if (e.target === m) {
+            m.classList.remove("active");
+            document.body.style.overflow = "";
+          }
+        });
+      });
+
+      document.getElementById("modal-close-btn").addEventListener("click", closeArticleModal);
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          closeArticleModal();
+          closeHoroscopeModal();
+          closeInfoModal();
+          closeMobileDrawer();
+          const searchPanel = document.getElementById("search-panel");
+          if (searchPanel) searchPanel.classList.remove("active");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
